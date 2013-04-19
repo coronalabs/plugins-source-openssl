@@ -5,7 +5,7 @@
 
 print( "OpenSSL sample start." )
 
-local openssl = require('openssl')
+local openssl = require('plugin.openssl')
 local util = require('util')
 
 lua_openssl_version, lua_version, openssl_version = openssl.version()
