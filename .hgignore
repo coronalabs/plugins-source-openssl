@@ -48,9 +48,10 @@ Desktop DF
 
 # Build files
 build/*
+android/bin/*
+android/libs/*
 android/libs/armeabi/*
 android/gen/*
 android/assets/*
 android/obj/*
-android/*.c
 
