@@ -95,12 +95,12 @@ cd "$path/ios"
 	find "$OUTPUT_DIR_IOS_SIM" -name \*.a | xargs -n 1 -I % lipo -remove armv7 % -output %
 cd -
 
-# echo "------------------------------------------------------------------------"
-# echo "[mac]"
-# cd "$path/mac"
-# 	./build.sh "$OUTPUT_DIR_MAC" $PLUGIN_NAME
-# 	checkError
-# cd -
+echo "------------------------------------------------------------------------"
+echo "[mac]"
+cd "$path/mac"
+	./build.sh "$OUTPUT_DIR_MAC" $PLUGIN_NAME
+	checkError
+cd -
 
 # echo "------------------------------------------------------------------------"
 # echo "[android]"

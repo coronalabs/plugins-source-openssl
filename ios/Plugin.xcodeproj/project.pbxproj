@@ -108,8 +108,8 @@
 				50362DCC17209608009972A3 /* openssl.c */,
 				50362DCD17209608009972A3 /* openssl.h */,
 				50362DCE17209608009972A3 /* ots.c */,
-				50362DCF17209608009972A3 /* pkcs7.c */,
 				50362DD017209608009972A3 /* pkcs12.c */,
+				50362DCF17209608009972A3 /* pkcs7.c */,
 				50362DD117209608009972A3 /* pkey.c */,
 				50362DD217209608009972A3 /* private.h */,
 				50362DD317209608009972A3 /* sk.h */,
@@ -286,7 +286,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"../sdk-openssl/AppleUniversal/lib\"",
+					"../sdk-openssl/AppleUniversal/lib",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -310,7 +310,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"../sdk-openssl/AppleUniversal/lib\"",
+					"../sdk-openssl/AppleUniversal/lib",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";

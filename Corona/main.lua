@@ -149,7 +149,21 @@ if false then
 	-- "da39a3ee5e6b4b0d3255bfef95601890afd80709"
 	-- Outputs:
 	-- "DA39A3EE5E6B4B0D3255BFEF95601890AFD80709"
-	print( "digest: ", HexDumpString( d, "" ) )
+	print( "SHA1 digest: ", HexDumpString( d, "" ) )
+
+end
+
+if false then
+
+	local md5 = openssl.get_digest('md5')
+
+	local d = md5:digest('')
+
+	-- SHA1 of empty string should be:
+	-- "d41d8cd98f00b204e9800998ecf8427e"
+	-- Outputs:
+	-- "D41D8CD98F00B204E9800998ECF8427E"
+	print( "MD5 digest: ", HexDumpString( d, "" ) )
 
 end
 
