@@ -73,7 +73,7 @@
 		50362DD617209608009972A3 /* xattrs.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = xattrs.c; path = "../sdk-lua-openssl/src/xattrs.c"; sourceTree = "<group>"; };
 		50362DD717209608009972A3 /* xexts.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = xexts.c; path = "../sdk-lua-openssl/src/xexts.c"; sourceTree = "<group>"; };
 		50362DD817209608009972A3 /* xname.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = xname.c; path = "../sdk-lua-openssl/src/xname.c"; sourceTree = "<group>"; };
-		A4E253B6166D6FB300DCDC2C /* libopenssl.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libopenssl.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4E253B6166D6FB300DCDC2C /* libplugin.openssl.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libplugin.openssl.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,7 +143,7 @@
 		A484111A15114F700074BD57 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A4E253B6166D6FB300DCDC2C /* libopenssl.a */,
+				A4E253B6166D6FB300DCDC2C /* libplugin.openssl.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -151,9 +151,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A4E253B5166D6FB300DCDC2C /* openssl */ = {
+		A4E253B5166D6FB300DCDC2C /* plugin.openssl */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A4E253BF166D6FB300DCDC2C /* Build configuration list for PBXNativeTarget "openssl" */;
+			buildConfigurationList = A4E253BF166D6FB300DCDC2C /* Build configuration list for PBXNativeTarget "plugin.openssl" */;
 			buildPhases = (
 				A4E253B2166D6FB300DCDC2C /* Sources */,
 				A4E253B3166D6FB300DCDC2C /* Frameworks */,
@@ -161,9 +161,9 @@
 			);
 			buildRules = (
 			);
-			name = openssl;
+			name = plugin.openssl;
 			productName = plugin_library;
-			productReference = A4E253B6166D6FB300DCDC2C /* libopenssl.a */;
+			productReference = A4E253B6166D6FB300DCDC2C /* libplugin.openssl.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -186,7 +186,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A4E253B5166D6FB300DCDC2C /* openssl */,
+				A4E253B5166D6FB300DCDC2C /* plugin.openssl */,
 			);
 		};
 /* End PBXProject section */
@@ -331,7 +331,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A4E253BF166D6FB300DCDC2C /* Build configuration list for PBXNativeTarget "openssl" */ = {
+		A4E253BF166D6FB300DCDC2C /* Build configuration list for PBXNativeTarget "plugin.openssl" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A4E253C0166D6FB300DCDC2C /* Debug */,

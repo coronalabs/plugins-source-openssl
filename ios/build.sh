@@ -1,22 +1,15 @@
 #!/bin/bash
 
+# This option is used to exit the script as
+# soon as a command returns a non-zero value.
+set -o errexit
+
 path=`dirname $0`
 
 OUTPUT_DIR=$1
-TARGET_NAME=openssl
+TARGET_NAME=plugin.openssl
 OUTPUT_SUFFIX=a
 CONFIG=Release
-
-#
-# Checks exit value for error
-# 
-checkError() {
-    if [ $? -ne 0 ]
-    then
-        echo "Exiting due to errors (above)"
-        exit -1
-    fi
-}
 
 # 
 # Canonicalize relative paths to absolute paths
@@ -40,18 +33,14 @@ echo "OUTPUT_DIR: $OUTPUT_DIR"
 
 # Clean
 xcodebuild -project "$path/Plugin.xcodeproj" -target $TARGET_NAME -configuration $CONFIG clean
-checkError
 
 # iOS
 xcodebuild -project "$path/Plugin.xcodeproj" -target $TARGET_NAME -configuration $CONFIG -sdk iphoneos6.1
-checkError
 
 # iOS-sim
 xcodebuild -project "$path/Plugin.xcodeproj" -target $TARGET_NAME -configuration $CONFIG -sdk iphonesimulator6.1
-checkError
 
 # create universal binary
 lipo -create "$path"/build/$CONFIG-iphoneos/lib$TARGET_NAME.$OUTPUT_SUFFIX "$path"/build/$CONFIG-iphonesimulator/lib$TARGET_NAME.$OUTPUT_SUFFIX -output "$OUTPUT_DIR"/lib$TARGET_NAME.$OUTPUT_SUFFIX
-checkError
 
 echo "$OUTPUT_DIR"/lib$TARGET_NAME.$OUTPUT_SUFFIX

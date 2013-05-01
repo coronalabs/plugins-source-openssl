@@ -149,7 +149,7 @@
 		50EE5B2A1729EC6600918343 /* usocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = usocket.c; path = "../sdk-luasocket/src/usocket.c"; sourceTree = "<group>"; };
 		50EE5B2B1729EC6600918343 /* usocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = usocket.h; path = "../sdk-luasocket/src/usocket.h"; sourceTree = "<group>"; };
 		A4430897164C70D800B9117B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		A49186401641DDB800A39286 /* plugin_openssl.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = plugin_openssl.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		A49186401641DDB800A39286 /* libplugin.openssl.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libplugin.openssl.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,7 +256,7 @@
 		A482DA8515F9B7E70084DC42 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A49186401641DDB800A39286 /* plugin_openssl.dylib */,
+				A49186401641DDB800A39286 /* libplugin.openssl.dylib */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -304,9 +304,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		A49186331641DDB800A39286 /* plugin_openssl */ = {
+		A49186331641DDB800A39286 /* libplugin.openssl */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A491863D1641DDB800A39286 /* Build configuration list for PBXNativeTarget "plugin_openssl" */;
+			buildConfigurationList = A491863D1641DDB800A39286 /* Build configuration list for PBXNativeTarget "libplugin.openssl" */;
 			buildPhases = (
 				A49186341641DDB800A39286 /* Sources */,
 				A49186381641DDB800A39286 /* Frameworks */,
@@ -317,9 +317,9 @@
 			);
 			dependencies = (
 			);
-			name = plugin_openssl;
+			name = libplugin.openssl;
 			productName = ads;
-			productReference = A49186401641DDB800A39286 /* plugin_openssl.dylib */;
+			productReference = A49186401641DDB800A39286 /* libplugin.openssl.dylib */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
 /* End PBXNativeTarget section */
@@ -342,7 +342,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A49186331641DDB800A39286 /* plugin_openssl */,
+				A49186331641DDB800A39286 /* libplugin.openssl */,
 			);
 		};
 /* End PBXProject section */
@@ -477,7 +477,7 @@
 					"$(inherited)",
 					"../sdk-openssl/AppleUniversal/lib",
 				);
-				PRODUCT_NAME = plugin_openssl;
+				PRODUCT_NAME = libplugin.openssl;
 			};
 			name = Debug;
 		};
@@ -492,7 +492,7 @@
 					"$(inherited)",
 					"../sdk-openssl/AppleUniversal/lib",
 				);
-				PRODUCT_NAME = plugin_openssl;
+				PRODUCT_NAME = libplugin.openssl;
 			};
 			name = Release;
 		};
@@ -508,7 +508,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A491863D1641DDB800A39286 /* Build configuration list for PBXNativeTarget "plugin_openssl" */ = {
+		A491863D1641DDB800A39286 /* Build configuration list for PBXNativeTarget "libplugin.openssl" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A491863E1641DDB800A39286 /* Debug */,

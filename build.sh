@@ -1,19 +1,12 @@
 #!/bin/bash
 
+# This option is used to exit the script as
+# soon as a command returns a non-zero value.
+set -o errexit
+
 path=`dirname $0`
 
-PLUGIN_NAME=openssl
-
-#
-# Checks exit value for error
-# 
-checkError() {
-    if [ $? -ne 0 ]
-    then
-        echo "Exiting due to errors (above)"
-        exit -1
-    fi
-}
+PLUGIN_NAME=libplugin.openssl
 
 # 
 # Canonicalize relative paths to absolute paths
@@ -37,7 +30,6 @@ fi
 
 # Create dst dir
 mkdir "$OUTPUT_DIR"
-checkError
 
 
 #
@@ -48,13 +40,11 @@ cd "$path"
 	echo "========================================================================"
 	echo "Packaging plugin for SDK..."
 	./build_sdk.sh "$OUTPUT_DIR" $PLUGIN_NAME
-	checkError
 	echo "Done."
 
 	# echo "========================================================================"
 	# echo "Packaging plugin for Enterprise"
 	# ./build_enterprise.sh "$OUTPUT_DIR" $PLUGIN_NAME
-	# checkError
 	# echo "Done."
 
 	echo "========================================================================"

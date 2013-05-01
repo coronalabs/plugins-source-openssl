@@ -43,7 +43,7 @@
 		A489DE2C16854301007FB757 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A489DE2916854301007FB757 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		A489DE2D16854301007FB757 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A489DE2A16854301007FB757 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		A4E2537F166AE3DC00DCDC2C /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4E2537E166AE3DC00DCDC2C /* Twitter.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		A4E253E5166DE7E000DCDC2C /* libopenssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A4E253E2166DE7C800DCDC2C /* libopenssl.a */; };
+		A4E253E5166DE7E000DCDC2C /* libplugin.openssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A4E253E2166DE7C800DCDC2C /* libplugin.openssl.a */; };
 		A4F0615A16854336009C7C8F /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4F0615916854336009C7C8F /* FacebookSDK.framework */; };
 /* End PBXBuildFile section */
 
@@ -146,7 +146,7 @@
 				A4E2537F166AE3DC00DCDC2C /* Twitter.framework in Frameworks */,
 				A484111E15114F700074BD57 /* UIKit.framework in Frameworks */,
 				A447B67C16675195009EA762 /* libplayer.a in Frameworks */,
-				A4E253E5166DE7E000DCDC2C /* libopenssl.a in Frameworks */,
+				A4E253E5166DE7E000DCDC2C /* libplugin.openssl.a in Frameworks */,
 				A4F0615A16854336009C7C8F /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,7 +266,7 @@
 		A4E253DB166DE7C800DCDC2C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A4E253E2166DE7C800DCDC2C /* libopenssl.a */,
+				A4E253E2166DE7C800DCDC2C /* libplugin.openssl.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -328,10 +328,10 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		A4E253E2166DE7C800DCDC2C /* libopenssl.a */ = {
+		A4E253E2166DE7C800DCDC2C /* libplugin.openssl.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libopenssl.a;
+			path = libplugin.openssl.a;
 			remoteRef = A4E253E1166DE7C800DCDC2C /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};

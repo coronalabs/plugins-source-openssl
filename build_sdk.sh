@@ -1,21 +1,14 @@
 #!/bin/bash
 
+# This option is used to exit the script as
+# soon as a command returns a non-zero value.
+set -o errexit
+
 path=`dirname $0`
 
 BUILD_DIR=$1
 PLUGIN_NAME=$2
 PRODUCT=sdk
-
-#
-# Checks exit value for error
-# 
-checkError() {
-    if [ $? -ne 0 ]
-    then
-        echo "Exiting due to errors (above)"
-        exit -1
-    fi
-}
 
 # 
 # Canonicalize relative paths to absolute paths
@@ -53,25 +46,12 @@ OUTPUT_DIR_SAMPLES=$OUTPUT_DIR/samples
 
 # Create directories
 mkdir "$OUTPUT_DIR"
-checkError
-
 mkdir -p "$OUTPUT_DIR_IOS"
-checkError
-
 mkdir -p "$OUTPUT_DIR_IOS_SIM"
-checkError
-
 mkdir -p "$OUTPUT_DIR_MAC"
-checkError
-
 mkdir -p "$OUTPUT_DIR_ANDROID"
-checkError
-
 mkdir -p "$OUTPUT_DIR_WIN32"
-checkError
-
 mkdir -p "$OUTPUT_DIR_SAMPLES"
-checkError
 
 #
 # Build
@@ -81,10 +61,8 @@ echo "------------------------------------------------------------------------"
 echo "[ios]"
 cd "$path/ios"
 	./build.sh "$OUTPUT_DIR_IOS" $PLUGIN_NAME
-	checkError
 
 	cp -v metadata.lua "$OUTPUT_DIR_IOS"
-	checkError
 
 	cp -rv "$OUTPUT_DIR_IOS/" "$OUTPUT_DIR_IOS_SIM"
 
@@ -99,38 +77,33 @@ echo "------------------------------------------------------------------------"
 echo "[mac]"
 cd "$path/mac"
 	./build.sh "$OUTPUT_DIR_MAC" $PLUGIN_NAME
-	checkError
 cd -
 
-# echo "------------------------------------------------------------------------"
-# echo "[android]"
-# cd "$path/android"
-# 	export OUTPUT_PLUGIN_DIR_ANDROID="$OUTPUT_DIR_ANDROID"
-# 	./build.plugin.sh
-# 	checkError
-# cd -
+echo "------------------------------------------------------------------------"
+echo "[android]"
+cd "$path/android"
+	export OUTPUT_PLUGIN_DIR_ANDROID="$OUTPUT_DIR_ANDROID"
+	# The parameters of this build.sh are optional.
+	./build.sh
+cd -
 
 # echo "------------------------------------------------------------------------"
 # echo "[win32]"
 # cd "$path/shared"
 # 	cp -v *.lua "$OUTPUT_DIR_WIN32"
-# 	checkError
 # cd -
 
 echo "------------------------------------------------------------------------"
 echo "[docs]"
 cp -vrf "$path/docs" "$OUTPUT_DIR"
-checkError
 
 echo "------------------------------------------------------------------------"
 echo "[samples]"
 cp -vrf "$path/Corona/" "$OUTPUT_DIR_SAMPLES"
-checkError
 
 echo "------------------------------------------------------------------------"
 echo "[metadata.json]"
 cp -vrf "$path/metadata.json" "$OUTPUT_DIR"
-checkError
 
 echo "------------------------------------------------------------------------"
 echo "Generating plugin zip"
