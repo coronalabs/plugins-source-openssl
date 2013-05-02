@@ -48,7 +48,7 @@ include $(PREBUILT_SHARED_LIBRARY)
 include $(CLEAR_VARS)
 LOCAL_MODULE := liblua
 
-#/**/
+#/**/ albert: WHICH ONE IS THE GOOD ONE??????
 LOCAL_SRC_FILES := ../../../main/platform/android/bin/enterprise/Libraries/Corona/libs/$(TARGET_ARCH_ABI)/liblua.so
 
 	#LOCAL_SRC_FILES := ../../../main/platform/android/bin/enterprise/Libraries/Corona/libs/$(TARGET_ARCH_ABI)/liblua.so
