@@ -132,7 +132,4 @@ ifeq ($(TARGET_ARCH_ABI),armeabi-v7a)
 #	LOCAL_ARM_NEON := true	
 endif
 
-# This is a library, so we want this to be prelinked.
-LOCAL_PRELINK_MODULE := true
-
 include $(BUILD_SHARED_LIBRARY)
