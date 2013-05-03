@@ -23,11 +23,7 @@ SDK_OPENSSL := $(PLUGIN_DIR)/sdk-openssl/android
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := libcrypto
-
-#LOCAL_SRC_FILES := $(SDK_OPENSSL)/lib/libcrypto.so
-#/**/ albert: THE ABOVE IS PROBABLY OK!!!!!!
-LOCAL_SRC_FILES := ../../../openssl-1.0.1e_android_good/libs/armeabi/libcrypto.so
-
+LOCAL_SRC_FILES := $(SDK_OPENSSL)/lib/libcrypto.so
 LOCAL_EXPORT_C_INCLUDES := $(SDK_OPENSSL)/include
 include $(PREBUILT_SHARED_LIBRARY)
 
@@ -35,11 +31,7 @@ include $(PREBUILT_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := libssl
-
-#LOCAL_SRC_FILES := $(SDK_OPENSSL)/lib/libssl.so
-#/**/ albert: THE ABOVE IS PROBABLY OK!!!!!!
-LOCAL_SRC_FILES := ../../../openssl-1.0.1e_android_good/libs/armeabi/libssl.so
-
+LOCAL_SRC_FILES := $(SDK_OPENSSL)/lib/libssl.so
 LOCAL_EXPORT_C_INCLUDES := $(SDK_OPENSSL)/include
 include $(PREBUILT_SHARED_LIBRARY)
 
@@ -64,6 +56,38 @@ include $(CLEAR_VARS)
 LOCAL_MODULE := libplugin.openssl
 
 LOCAL_C_INCLUDES := \
+	.. \
+	$(LUA_API_DIR) \
+	$(SDK_LUA_OPENSSL) \
+	$(SDK_LUASOCKET) \
+	$(SDK_OPENSSL)/include
+
+LOCAL_SRC_FILES := ../libplugin_openssl.cpp
+
+LOCAL_CFLAGS := \
+	-DANDROID_NDK \
+	-DNDEBUG \
+	-D_REENTRANT \
+	-DRtt_ANDROID_ENV
+
+LOCAL_LDLIBS := -llog
+
+ifeq ($(TARGET_ARCH),arm)
+LOCAL_CFLAGS+= -D_ARM_ASSEM_
+endif
+
+LOCAL_LDFLAGS += -Wl,--export-dynamic,-fPIC
+# Arm vs Thumb.
+LOCAL_ARM_MODE := arm
+include $(BUILD_SHARED_LIBRARY)
+
+# -----------------------------------------------------------------------------
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libplugin.openssl_core
+
+LOCAL_C_INCLUDES := \
+	.. \
 	$(LUA_API_DIR) \
 	$(SDK_LUA_OPENSSL) \
 	$(SDK_LUASOCKET) \
@@ -125,11 +149,7 @@ ifeq ($(TARGET_ARCH),arm)
 LOCAL_CFLAGS+= -D_ARM_ASSEM_
 endif
 
+LOCAL_LDFLAGS += -Wl,--export-dynamic,-fPIC
+# Arm vs Thumb.
 LOCAL_ARM_MODE := arm
-
-ifeq ($(TARGET_ARCH_ABI),armeabi-v7a)
-#	LOCAL_CFLAGS := $(LOCAL_CFLAGS) -DHAVE_NEON=0
-#	LOCAL_ARM_NEON := true	
-endif
-
 include $(BUILD_SHARED_LIBRARY)

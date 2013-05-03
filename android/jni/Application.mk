@@ -1,3 +1,5 @@
+# albert: This is MIGHT be useless because this is a plugin, NOT an application.
+
 #APP_MODULES      := openssl 
 #APP_PROJECT_PATH := $(call my-dir)/project
 APP_PLATFORM := android-8
