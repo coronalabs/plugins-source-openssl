@@ -23,17 +23,17 @@ SDK_OPENSSL := $(PLUGIN_DIR)/sdk-openssl/android
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := libcrypto
-LOCAL_SRC_FILES := $(SDK_OPENSSL)/lib/libcrypto.so
+LOCAL_SRC_FILES := $(SDK_OPENSSL)/lib/libcrypto.a
 LOCAL_EXPORT_C_INCLUDES := $(SDK_OPENSSL)/include
-include $(PREBUILT_SHARED_LIBRARY)
+include $(PREBUILT_STATIC_LIBRARY)
 
 # -----------------------------------------------------------------------------
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := libssl
-LOCAL_SRC_FILES := $(SDK_OPENSSL)/lib/libssl.so
+LOCAL_SRC_FILES := $(SDK_OPENSSL)/lib/libssl.a
 LOCAL_EXPORT_C_INCLUDES := $(SDK_OPENSSL)/include
-include $(PREBUILT_SHARED_LIBRARY)
+include $(PREBUILT_STATIC_LIBRARY)
 
 # -----------------------------------------------------------------------------
 
@@ -54,37 +54,6 @@ include $(PREBUILT_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := libplugin.openssl
-
-LOCAL_C_INCLUDES := \
-	.. \
-	$(LUA_API_DIR) \
-	$(SDK_LUA_OPENSSL) \
-	$(SDK_LUASOCKET) \
-	$(SDK_OPENSSL)/include
-
-LOCAL_SRC_FILES := ../libplugin_openssl.cpp
-
-LOCAL_CFLAGS := \
-	-DANDROID_NDK \
-	-DNDEBUG \
-	-D_REENTRANT \
-	-DRtt_ANDROID_ENV
-
-LOCAL_LDLIBS := -llog
-
-ifeq ($(TARGET_ARCH),arm)
-LOCAL_CFLAGS+= -D_ARM_ASSEM_
-endif
-
-LOCAL_LDFLAGS += -Wl,--export-dynamic,-fPIC
-# Arm vs Thumb.
-LOCAL_ARM_MODE := arm
-include $(BUILD_SHARED_LIBRARY)
-
-# -----------------------------------------------------------------------------
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := libplugin.openssl_core
 
 LOCAL_C_INCLUDES := \
 	.. \
@@ -141,15 +110,19 @@ LOCAL_CFLAGS := \
 LOCAL_LDLIBS := -llog -lz
 
 LOCAL_SHARED_LIBRARIES := \
-	libcrypto \
-	liblua \
-	libssl
+	liblua
+
+# IMPORTANT: Do NOT change the order of the libraries in LOCAL_STATIC_LIBRARIES.
+# Otherwise some symbols won't be found at link-time.
+LOCAL_STATIC_LIBRARIES := \
+	libssl \
+	libcrypto
 
 ifeq ($(TARGET_ARCH),arm)
 LOCAL_CFLAGS+= -D_ARM_ASSEM_
 endif
 
-LOCAL_LDFLAGS += -Wl,--export-dynamic,-fPIC
+LOCAL_LDFLAGS += -Wl,-export-dynamic,-fPIC
 # Arm vs Thumb.
 LOCAL_ARM_MODE := arm
 include $(BUILD_SHARED_LIBRARY)
