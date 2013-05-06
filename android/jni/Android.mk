@@ -122,7 +122,6 @@ ifeq ($(TARGET_ARCH),arm)
 LOCAL_CFLAGS+= -D_ARM_ASSEM_
 endif
 
-LOCAL_LDFLAGS += -Wl,-export-dynamic,-fPIC
 # Arm vs Thumb.
 LOCAL_ARM_MODE := arm
 include $(BUILD_SHARED_LIBRARY)
