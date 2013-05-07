@@ -31,10 +31,14 @@ popd > /dev/null
 
 echo "OUTPUT_DIR: $OUTPUT_DIR"
 
+# Clean.
 xcodebuild -project "$path/Plugin.xcodeproj" -configuration $CONFIG clean
 
+# Build Mac.
 xcodebuild -project "$path/Plugin.xcodeproj" -configuration $CONFIG
 
+# Copy to destination.
 cp "$path/build/Release/$TARGET_NAME.$OUTPUT_SUFFIX" "$OUTPUT_DIR"
 
+echo Done.
 echo "$OUTPUT_DIR"/$TARGET_NAME.$OUTPUT_SUFFIX

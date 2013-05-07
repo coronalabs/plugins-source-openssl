@@ -10,6 +10,13 @@ BUILD_DIR=$1
 PLUGIN_NAME=$2
 PRODUCT=sdk
 
+# Verify parameters.
+if [ $# -ne 2 ]
+then
+	echo Not enough parameters provided to: ${0}
+	exit 1
+fi
+
 # 
 # Canonicalize relative paths to absolute paths
 # 
@@ -17,7 +24,6 @@ pushd $path > /dev/null
 dir=`pwd`
 path=$dir
 popd > /dev/null
-
 
 #
 # OUTPUT_DIR
@@ -85,13 +91,14 @@ cd "$path/android"
 	export OUTPUT_PLUGIN_DIR_ANDROID="$OUTPUT_DIR_ANDROID"
 	# The parameters of this build.sh are optional.
 	./build.sh
+	cp -v libs/armeabi-v7a/* "$OUTPUT_DIR_ANDROID"
 cd -
 
-# echo "------------------------------------------------------------------------"
-# echo "[win32]"
-# cd "$path/shared"
-# 	cp -v *.lua "$OUTPUT_DIR_WIN32"
-# cd -
+echo "------------------------------------------------------------------------"
+echo "[win32]"
+cd "$path"
+	cp -v sdk-openssl/win32/bin/*.dll "$OUTPUT_DIR_WIN32"
+cd -
 
 echo "------------------------------------------------------------------------"
 echo "[docs]"

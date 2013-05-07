@@ -21,7 +21,7 @@ popd > /dev/null
 
 if [ -z "$OUTPUT_DIR" ]
 then
-    OUTPUT_DIR=$path/../../build-core/$TARGET_NAME/ios
+    OUTPUT_DIR=.
 fi
 
 pushd $OUTPUT_DIR > /dev/null
@@ -31,16 +31,17 @@ popd > /dev/null
 
 echo "OUTPUT_DIR: $OUTPUT_DIR"
 
-# Clean
+# Clean.
 xcodebuild -project "$path/Plugin.xcodeproj" -target $TARGET_NAME -configuration $CONFIG clean
 
-# iOS
+# Build iOS.
 xcodebuild -project "$path/Plugin.xcodeproj" -target $TARGET_NAME -configuration $CONFIG -sdk iphoneos6.1
 
-# iOS-sim
+# Build iOS-sim.
 xcodebuild -project "$path/Plugin.xcodeproj" -target $TARGET_NAME -configuration $CONFIG -sdk iphonesimulator6.1
 
-# create universal binary
+# Create a universal binary.
 lipo -create "$path"/build/$CONFIG-iphoneos/lib$TARGET_NAME.$OUTPUT_SUFFIX "$path"/build/$CONFIG-iphonesimulator/lib$TARGET_NAME.$OUTPUT_SUFFIX -output "$OUTPUT_DIR"/lib$TARGET_NAME.$OUTPUT_SUFFIX
 
+echo Done.
 echo "$OUTPUT_DIR"/lib$TARGET_NAME.$OUTPUT_SUFFIX

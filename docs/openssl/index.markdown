@@ -1,7 +1,7 @@
 # Library.OpenSSL.*
 
 > --------------------- ------------------------------------------------------------------------------------------
-> __Type__              [provider][api.type.CoronaProvider]
+> __Type__              [library][api.type.library]
 > __Revision__          [REVISION_LABEL](REVISION_URL)
 > __Keywords__          openssl, security
 > __Sample code__       

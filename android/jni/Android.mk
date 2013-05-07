@@ -5,15 +5,11 @@
 
 LOCAL_PATH := $(call my-dir)
 
-#/**/ albert: TEMP!!!
-#PLUGIN_DIR := ../../../../plugins/openssl
-PLUGIN_DIR := ../../
+CORONA_ENTERPRISE := /Applications/CoronaEnterprise
+CORONA_ROOT := $(CORONA_ENTERPRISE)/Corona
+LUA_API_DIR := $(CORONA_ROOT)/shared/include/lua
 
-#/**/ albert: TEMP!!!
-#CORONA_ROOT := $(LOCAL_PATH)/../../
-CORONA_ROOT := $(LOCAL_PATH)/../../../main
-
-LUA_API_DIR := $(CORONA_ROOT)/external/lua-5.1.3/src
+PLUGIN_DIR := ../..
 
 SDK_LUA_OPENSSL := $(PLUGIN_DIR)/sdk-lua-openssl/src
 SDK_LUASOCKET := $(PLUGIN_DIR)/sdk-luasocket/src
@@ -39,14 +35,7 @@ include $(PREBUILT_STATIC_LIBRARY)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := liblua
-
-#/**/ albert: WHICH ONE IS THE GOOD ONE??????
-LOCAL_SRC_FILES := ../../../main/platform/android/bin/enterprise/Libraries/Corona/libs/$(TARGET_ARCH_ABI)/liblua.so
-
-	#LOCAL_SRC_FILES := ../../../main/platform/android/bin/enterprise/Libraries/Corona/libs/$(TARGET_ARCH_ABI)/liblua.so
-	#LOCAL_SRC_FILES := ../../../main/platform/android/ndk/libs/$(TARGET_ARCH_ABI)/liblua.so
-	#LOCAL_SRC_FILES := ../../../main/platform/android/ndk/obj/local/$(TARGET_ARCH_ABI)/liblua.so
-
+LOCAL_SRC_FILES := ../liblua.so
 #LOCAL_EXPORT_C_INCLUDES := $(LUA_API_DIR)
 include $(PREBUILT_SHARED_LIBRARY)
 
