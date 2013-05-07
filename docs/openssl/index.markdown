@@ -11,15 +11,11 @@
 
 ## Overview
 
-The OpenSSL plugin provides access to the OpenSSL library, as exposed by
+The OpenSSL plugin provides access to the OpenSSL library, as exposed by George Zhao's
 
-George Zhao's
+[lua-openssl](https://github.com/zhaozg/lua-openssl)
 
-https://github.com/zhaozg/lua-openssl
-
-OpenSSL's documentation is available here:
-
-http://www.openssl.org/docs/
+OpenSSL's documentation is available from [openssl.org](http://www.openssl.org/docs/)
 
 ## Platforms
 
