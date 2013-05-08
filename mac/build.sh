@@ -7,7 +7,7 @@ set -o errexit
 path=`dirname $0`
 
 OUTPUT_DIR=$1
-TARGET_NAME=libplugin.openssl
+TARGET_NAME=plugin_openssl
 OUTPUT_SUFFIX=dylib
 CONFIG=Release
 
