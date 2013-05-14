@@ -159,7 +159,7 @@ if false then
 
 	local d = md5:digest('')
 
-	-- SHA1 of empty string should be:
+	-- MD5 of empty string should be:
 	-- "d41d8cd98f00b204e9800998ecf8427e"
 	-- Outputs:
 	-- "D41D8CD98F00B204E9800998ECF8427E"
