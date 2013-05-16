@@ -102,7 +102,7 @@
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
-				CommandLine="call ..\..\..\..\CoronaEnterprise\Corona\win\bin\lua2c.bat ..\..\..\..\CoronaEnterprise\Corona\win\bin &quot;$(ProjectDir)$(ConfigurationName)&quot; &quot;$(ProjectDir)\..\shared\simulator_plugin_library.lua&quot; &quot;$(ProjectDir)&quot; &quot;$(ConfigurationName)&quot;&#x0D;&#x0A;"
+				CommandLine="REM call ..\..\..\..\CoronaEnterprise\Corona\win\bin\lua2c.bat ..\..\..\..\CoronaEnterprise\Corona\win\bin &quot;$(ProjectDir)$(ConfigurationName)&quot; &quot;$(ProjectDir)\..\shared\simulator_plugin_library.lua&quot; &quot;$(ProjectDir)&quot; &quot;$(ConfigurationName)&quot;&#x0D;&#x0A;"
 			/>
 			<Tool
 				Name="VCCustomBuildTool"
@@ -120,7 +120,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				EnableIntrinsicFunctions="true"
-				AdditionalIncludeDirectories="..\..\..\..\CoronaEnterprise\Corona\shared\include\Corona;..\..\..\..\CoronaEnterprise\Corona\shared\include\lua"
+				AdditionalIncludeDirectories="..\..\..\..\CoronaEnterprise\Corona\shared\include\Corona;..\..\..\..\CoronaEnterprise\Corona\shared\include\lua;&quot;..\sdk-lua-openssl\src&quot;;&quot;..\sdk-luasocket\src&quot;;&quot;..\sdk-openssl\win32\include&quot;"
 				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL;PLUGIN_EXPORTS"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"
@@ -138,7 +138,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="&quot;..\..\..\..\CoronaEnterprise\Corona\win\lib\Corona Simulator.lib&quot;"
+				AdditionalDependencies="&quot;..\..\..\..\CoronaEnterprise\Corona\win\lib\Corona Simulator.lib&quot; &quot;..\sdk-openssl\win32\lib\libeay32.lib&quot; &quot;..\sdk-openssl\win32\lib\ssleay32.lib&quot; ws2_32.lib"
 				OutputFile="$(OutDir)\plugin_openssl.dll"
 				LinkIncremental="1"
 				GenerateDebugInformation="true"
@@ -167,7 +167,7 @@
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
-				CommandLine="xcopy &quot;$(TargetPath)&quot; &quot;C:\Program Files\Corona Labs\Corona SDK\Plugins&quot; /Y /I /E&#x0D;&#x0A;"
+				CommandLine="xcopy &quot;$(TargetPath)&quot; &quot;C:\main\platform\win32\simulator\Release\Resources&quot; /Y /I /E"
 			/>
 		</Configuration>
 	</Configurations>
