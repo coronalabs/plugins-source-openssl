@@ -194,7 +194,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\plugins-openssl\sdk-lua-openssl\src\corona_auxiliar.h"
+				RelativePath="..\sdk-lua-openssl\src\corona_auxiliar.h"
 				>
 			</File>
 			<File
@@ -210,7 +210,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\plugins-openssl\sdk-lua-openssl\src\ec_lcl.h"
+				RelativePath="..\sdk-lua-openssl\src\ec_lcl.h"
 				>
 			</File>
 			<File
@@ -234,7 +234,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\plugins-openssl\sdk-lua-openssl\src\openssl.h"
+				RelativePath="..\sdk-lua-openssl\src\openssl.h"
 				>
 			</File>
 			<File
@@ -254,11 +254,11 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\plugins-openssl\sdk-lua-openssl\src\private.h"
+				RelativePath="..\sdk-lua-openssl\src\private.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\plugins-openssl\sdk-lua-openssl\src\sk.h"
+				RelativePath="..\sdk-lua-openssl\src\sk.h"
 				>
 			</File>
 			<File
