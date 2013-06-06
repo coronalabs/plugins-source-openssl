@@ -302,6 +302,14 @@
 				>
 			</File>
 			<File
+				RelativePath="..\sdk-luasocket\src\context.c"
+				>
+			</File>
+			<File
+				RelativePath="..\sdk-luasocket\src\context.h"
+				>
+			</File>
+			<File
 				RelativePath="..\sdk-luasocket\src\except.c"
 				>
 			</File>
@@ -359,6 +367,14 @@
 			</File>
 			<File
 				RelativePath="..\sdk-luasocket\src\socket.h"
+				>
+			</File>
+			<File
+				RelativePath="..\sdk-luasocket\src\ssl.c"
+				>
+			</File>
+			<File
+				RelativePath="..\sdk-luasocket\src\ssl.h"
 				>
 			</File>
 			<File
