@@ -56,3 +56,6 @@ android/assets/*
 android/obj/*
 
 mac/plugin_openssl.dylib
+
+win32/Debug
+win32/Release
