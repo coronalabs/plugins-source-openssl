@@ -55,3 +55,4 @@ android/gen/*
 android/assets/*
 android/obj/*
 
+mac/plugin_openssl.dylib

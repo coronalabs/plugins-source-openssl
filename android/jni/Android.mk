@@ -54,6 +54,7 @@ LOCAL_C_INCLUDES := \
 LOCAL_SRC_FILES := \
 	$(SDK_LUASOCKET)/auxiliar.c \
 	$(SDK_LUASOCKET)/buffer.c \
+	$(SDK_LUASOCKET)/context.c \
 	$(SDK_LUASOCKET)/except.c \
 	$(SDK_LUASOCKET)/inet.c \
 	$(SDK_LUASOCKET)/io.c \
@@ -62,6 +63,7 @@ LOCAL_SRC_FILES := \
 	$(SDK_LUASOCKET)/mime.c \
 	$(SDK_LUASOCKET)/options.c \
 	$(SDK_LUASOCKET)/select.c \
+	$(SDK_LUASOCKET)/ssl.c \
 	$(SDK_LUASOCKET)/tcp.c \
 	$(SDK_LUASOCKET)/timeout.c \
 	$(SDK_LUASOCKET)/udp.c \

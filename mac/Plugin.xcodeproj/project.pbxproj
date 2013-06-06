@@ -33,6 +33,10 @@
 		5041FA941729D8E8009F5D8B /* xattrs.c in Sources */ = {isa = PBXBuildFile; fileRef = 5041FA7A1729D8E8009F5D8B /* xattrs.c */; };
 		5041FA951729D8E8009F5D8B /* xexts.c in Sources */ = {isa = PBXBuildFile; fileRef = 5041FA7B1729D8E8009F5D8B /* xexts.c */; };
 		5041FA961729D8E8009F5D8B /* xname.c in Sources */ = {isa = PBXBuildFile; fileRef = 5041FA7C1729D8E8009F5D8B /* xname.c */; };
+		50D4539F1760296E00776C41 /* context.c in Sources */ = {isa = PBXBuildFile; fileRef = 50D4539B1760296E00776C41 /* context.c */; };
+		50D453A01760296E00776C41 /* context.h in Headers */ = {isa = PBXBuildFile; fileRef = 50D4539C1760296E00776C41 /* context.h */; };
+		50D453A11760296E00776C41 /* ssl.c in Sources */ = {isa = PBXBuildFile; fileRef = 50D4539D1760296E00776C41 /* ssl.c */; };
+		50D453A21760296E00776C41 /* ssl.h in Headers */ = {isa = PBXBuildFile; fileRef = 50D4539E1760296E00776C41 /* ssl.h */; };
 		50EE5B021729EC3000918343 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50EE5B001729EC3000918343 /* libcrypto.a */; };
 		50EE5B031729EC3000918343 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50EE5B011729EC3000918343 /* libssl.a */; };
 		50EE5B2E1729EC6600918343 /* auxiliar.c in Sources */ = {isa = PBXBuildFile; fileRef = 50EE5B061729EC6600918343 /* auxiliar.c */; };
@@ -108,6 +112,10 @@
 		5041FA7A1729D8E8009F5D8B /* xattrs.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = xattrs.c; path = "../sdk-lua-openssl/src/xattrs.c"; sourceTree = "<group>"; };
 		5041FA7B1729D8E8009F5D8B /* xexts.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = xexts.c; path = "../sdk-lua-openssl/src/xexts.c"; sourceTree = "<group>"; };
 		5041FA7C1729D8E8009F5D8B /* xname.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = xname.c; path = "../sdk-lua-openssl/src/xname.c"; sourceTree = "<group>"; };
+		50D4539B1760296E00776C41 /* context.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = context.c; path = "../sdk-luasocket/src/context.c"; sourceTree = "<group>"; };
+		50D4539C1760296E00776C41 /* context.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = context.h; path = "../sdk-luasocket/src/context.h"; sourceTree = "<group>"; };
+		50D4539D1760296E00776C41 /* ssl.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ssl.c; path = "../sdk-luasocket/src/ssl.c"; sourceTree = "<group>"; };
+		50D4539E1760296E00776C41 /* ssl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ssl.h; path = "../sdk-luasocket/src/ssl.h"; sourceTree = "<group>"; };
 		50EE5B001729EC3000918343 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = "../sdk-openssl/AppleUniversal/lib/libcrypto.a"; sourceTree = "<group>"; };
 		50EE5B011729EC3000918343 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = "../sdk-openssl/AppleUniversal/lib/libssl.a"; sourceTree = "<group>"; };
 		50EE5B061729EC6600918343 /* auxiliar.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = auxiliar.c; path = "../sdk-luasocket/src/auxiliar.c"; sourceTree = "<group>"; };
@@ -201,6 +209,10 @@
 		50EE5B051729EC5400918343 /* sdk-luasocket */ = {
 			isa = PBXGroup;
 			children = (
+				50D4539B1760296E00776C41 /* context.c */,
+				50D4539C1760296E00776C41 /* context.h */,
+				50D4539D1760296E00776C41 /* ssl.c */,
+				50D4539E1760296E00776C41 /* ssl.h */,
 				50EE5B061729EC6600918343 /* auxiliar.c */,
 				50EE5B071729EC6600918343 /* auxiliar.h */,
 				50EE5B081729EC6600918343 /* buffer.c */,
@@ -298,6 +310,8 @@
 				50EE5B471729EC6600918343 /* udp.h in Headers */,
 				50EE5B491729EC6600918343 /* unix.h in Headers */,
 				50EE5B4B1729EC6600918343 /* usocket.h in Headers */,
+				50D453A01760296E00776C41 /* context.h in Headers */,
+				50D453A21760296E00776C41 /* ssl.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +402,8 @@
 				50EE5B461729EC6600918343 /* udp.c in Sources */,
 				50EE5B481729EC6600918343 /* unix.c in Sources */,
 				50EE5B4A1729EC6600918343 /* usocket.c in Sources */,
+				50D4539F1760296E00776C41 /* context.c in Sources */,
+				50D453A11760296E00776C41 /* ssl.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
