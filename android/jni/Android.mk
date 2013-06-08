@@ -8,6 +8,7 @@ LOCAL_PATH := $(call my-dir)
 CORONA_ENTERPRISE := /Applications/CoronaEnterprise
 CORONA_ROOT := $(CORONA_ENTERPRISE)/Corona
 LUA_API_DIR := $(CORONA_ROOT)/shared/include/lua
+CORONA_API_DIR := $(CORONA_ROOT)/shared/include/Corona
 
 PLUGIN_DIR := ../..
 
@@ -42,11 +43,20 @@ include $(PREBUILT_SHARED_LIBRARY)
 # -----------------------------------------------------------------------------
 
 include $(CLEAR_VARS)
+LOCAL_MODULE := libcorona
+LOCAL_SRC_FILES := ../libcorona.so
+#LOCAL_EXPORT_C_INCLUDES := $(CORONA_API_DIR)
+include $(PREBUILT_SHARED_LIBRARY)
+
+# -----------------------------------------------------------------------------
+
+include $(CLEAR_VARS)
 LOCAL_MODULE := libplugin.openssl
 
 LOCAL_C_INCLUDES := \
 	.. \
 	$(LUA_API_DIR) \
+	$(CORONA_API_DIR) \
 	$(SDK_LUA_OPENSSL) \
 	$(SDK_LUASOCKET) \
 	$(SDK_OPENSSL)/include
@@ -86,6 +96,8 @@ LOCAL_SRC_FILES := \
 	$(SDK_LUA_OPENSSL)/pkcs12.c \
 	$(SDK_LUA_OPENSSL)/pkcs7.c \
 	$(SDK_LUA_OPENSSL)/pkey.c \
+	$(SDK_LUA_OPENSSL)/plugin_luasec_https.c \
+	$(SDK_LUA_OPENSSL)/plugin_luasec_ssl.c \
 	$(SDK_LUA_OPENSSL)/ssl.c \
 	$(SDK_LUA_OPENSSL)/x509.c \
 	$(SDK_LUA_OPENSSL)/xattrs.c \
@@ -101,7 +113,8 @@ LOCAL_CFLAGS := \
 LOCAL_LDLIBS := -llog -lz
 
 LOCAL_SHARED_LIBRARIES := \
-	liblua
+	liblua \
+	libcorona
 
 # IMPORTANT: Do NOT change the order of the libraries in LOCAL_STATIC_LIBRARIES.
 # Otherwise some symbols won't be found at link-time.
