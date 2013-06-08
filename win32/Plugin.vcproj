@@ -254,6 +254,14 @@
 				>
 			</File>
 			<File
+				RelativePath="..\sdk-lua-openssl\src\plugin_luasec_https.c"
+				>
+			</File>
+			<File
+				RelativePath="..\sdk-lua-openssl\src\plugin_luasec_ssl.c"
+				>
+			</File>
+			<File
 				RelativePath="..\sdk-lua-openssl\src\private.h"
 				>
 			</File>
