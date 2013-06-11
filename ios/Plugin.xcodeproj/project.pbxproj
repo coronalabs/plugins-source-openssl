@@ -32,6 +32,8 @@
 		50362DED17209608009972A3 /* xname.c in Sources */ = {isa = PBXBuildFile; fileRef = 50362DD817209608009972A3 /* xname.c */; };
 		505018541762D0DB00834415 /* plugin_luasec_https.c in Sources */ = {isa = PBXBuildFile; fileRef = 505018521762D0DB00834415 /* plugin_luasec_https.c */; };
 		505018551762D0DB00834415 /* plugin_luasec_ssl.c in Sources */ = {isa = PBXBuildFile; fileRef = 505018531762D0DB00834415 /* plugin_luasec_ssl.c */; };
+		50951A051766A2C900A55651 /* context.c in Sources */ = {isa = PBXBuildFile; fileRef = 50951A011766A2C900A55651 /* context.c */; };
+		50951A061766A2C900A55651 /* ssl.c in Sources */ = {isa = PBXBuildFile; fileRef = 50951A031766A2C900A55651 /* ssl.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -77,6 +79,10 @@
 		50362DD817209608009972A3 /* xname.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = xname.c; path = "../sdk-lua-openssl/src/xname.c"; sourceTree = "<group>"; };
 		505018521762D0DB00834415 /* plugin_luasec_https.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = plugin_luasec_https.c; path = "../sdk-lua-openssl/src/plugin_luasec_https.c"; sourceTree = "<group>"; };
 		505018531762D0DB00834415 /* plugin_luasec_ssl.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = plugin_luasec_ssl.c; path = "../sdk-lua-openssl/src/plugin_luasec_ssl.c"; sourceTree = "<group>"; };
+		50951A011766A2C900A55651 /* context.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = context.c; path = "../sdk-luasocket/src/context.c"; sourceTree = "<group>"; };
+		50951A021766A2C900A55651 /* context.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = context.h; path = "../sdk-luasocket/src/context.h"; sourceTree = "<group>"; };
+		50951A031766A2C900A55651 /* ssl.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ssl.c; path = "../sdk-luasocket/src/ssl.c"; sourceTree = "<group>"; };
+		50951A041766A2C900A55651 /* ssl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ssl.h; path = "../sdk-luasocket/src/ssl.h"; sourceTree = "<group>"; };
 		A4E253B6166D6FB300DCDC2C /* libplugin.openssl.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libplugin.openssl.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -137,9 +143,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		50951A001766A26900A55651 /* luasec */ = {
+			isa = PBXGroup;
+			children = (
+				50951A011766A2C900A55651 /* context.c */,
+				50951A021766A2C900A55651 /* context.h */,
+				50951A031766A2C900A55651 /* ssl.c */,
+				50951A041766A2C900A55651 /* ssl.h */,
+			);
+			name = luasec;
+			sourceTree = "<group>";
+		};
 		A484110E15114F700074BD57 = {
 			isa = PBXGroup;
 			children = (
+				50951A001766A26900A55651 /* luasec */,
 				502D3C4B171E31FE00040046 /* sdk-lua-openssl */,
 				502D3C7F171E32B900040046 /* Frameworks */,
 				A484111A15114F700074BD57 /* Products */,
@@ -225,6 +243,8 @@
 				50362DED17209608009972A3 /* xname.c in Sources */,
 				505018541762D0DB00834415 /* plugin_luasec_https.c in Sources */,
 				505018551762D0DB00834415 /* plugin_luasec_ssl.c in Sources */,
+				50951A051766A2C900A55651 /* context.c in Sources */,
+				50951A061766A2C900A55651 /* ssl.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
