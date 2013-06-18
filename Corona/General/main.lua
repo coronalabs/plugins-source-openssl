@@ -261,7 +261,7 @@ if false then
 	--local evp_cipher = openssl.get_cipher('bf')
 	local evp_cipher = openssl.get_cipher('aes-256-ecb')
 
-	m = 'abcdefghick'
+	m = 'abcdefghijk'
 	key = m
 	cdata = evp_cipher:encrypt(m,key)
 	m1 = evp_cipher:decrypt(cdata,key)
