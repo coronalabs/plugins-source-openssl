@@ -16,6 +16,9 @@ local openssl = require('plugin.openssl')
 local socket = require('socket')
 local plugin_luasec_ssl = require('plugin_luasec_ssl')
 
+lua_openssl_version, lua_version, openssl_version = openssl.version()
+print( "lua-openssl version: " .. lua_openssl_version, lua_version, openssl_version )
+
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 

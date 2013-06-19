@@ -9,7 +9,7 @@ local openssl = require('plugin.openssl')
 local util = require('util')
 
 lua_openssl_version, lua_version, openssl_version = openssl.version()
-print( lua_openssl_version, lua_version, openssl_version )
+print( "lua-openssl version: " .. lua_openssl_version, lua_version, openssl_version )
 
 --dump a table 
 function dump(t,i)
