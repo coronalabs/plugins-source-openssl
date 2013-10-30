@@ -49,6 +49,10 @@ settings =
 	{
 		-- key is the name passed to Lua's 'require()'
 		["plugin.openssl"] =
+		{
+			-- required
+			publisherId = "com.coronalabs",
+		},
 	},		
 }
 ``````
