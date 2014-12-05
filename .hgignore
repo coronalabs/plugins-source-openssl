@@ -13,8 +13,7 @@ syntax: glob
 .*.swp
 
 # XCode
-contents.xcworkspacedata
-*.xcworkspacedata
+*.xcworkspace*
 
 # Hidden files used by the Finder in MacOS
 .DS_Store
