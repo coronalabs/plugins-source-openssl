@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{79F0CACC-457B-4A25-BC54-81277688C361}</ProjectGuid>
+    <RootNamespace>Plugin</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+    <TargetName>plugin_openssl</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <TargetName>plugin_openssl</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <PreBuildEvent />
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\sdk-corona-enterprise\shared\include;..\sdk-lua-openssl\src;..\sdk-luasocket\src;..\sdk-openssl\win32\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <IgnoreStandardIncludePath>false</IgnoreStandardIncludePath>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>..\sdk-corona-enterprise\win32\lib\*.lib;..\sdk-openssl\win32\lib\libeay32.lib;..\sdk-openssl\win32\lib\ssleay32.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <PreBuildEvent />
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>..\sdk-corona-enterprise\shared\include;..\sdk-lua-openssl\src;..\sdk-luasocket\src;..\sdk-openssl\win32\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>..\sdk-corona-enterprise\win32\lib\*.lib;..\sdk-openssl\win32\lib\libeay32.lib;..\sdk-openssl\win32\lib\ssleay32.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent />
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\sdk-lua-openssl\src\bio.c" />
+    <ClCompile Include="..\sdk-lua-openssl\src\cipher.c" />
+    <ClCompile Include="..\sdk-lua-openssl\src\conf.c" />
+    <ClCompile Include="..\sdk-lua-openssl\src\corona_auxiliar.c" />
+    <ClCompile Include="..\sdk-lua-openssl\src\crl.c" />
+    <ClCompile Include="..\sdk-lua-openssl\src\csr.c" />
+    <ClCompile Include="..\sdk-lua-openssl\src\digest.c" />
+    <ClCompile Include="..\sdk-lua-openssl\src\engine.c" />
+    <ClCompile Include="..\sdk-lua-openssl\src\lbn.c" />
+    <ClCompile Include="..\sdk-lua-openssl\src\misc.c" />
+    <ClCompile Include="..\sdk-lua-openssl\src\ocsp.c" />
+    <ClCompile Include="..\sdk-lua-openssl\src\openssl.c" />
+    <ClCompile Include="..\sdk-lua-openssl\src\ots.c" />
+    <ClCompile Include="..\sdk-lua-openssl\src\pkcs12.c" />
+    <ClCompile Include="..\sdk-lua-openssl\src\pkcs7.c" />
+    <ClCompile Include="..\sdk-lua-openssl\src\pkey.c" />
+    <ClCompile Include="..\sdk-lua-openssl\src\plugin_luasec_https.c" />
+    <ClCompile Include="..\sdk-lua-openssl\src\plugin_luasec_ssl.c" />
+    <ClCompile Include="..\sdk-lua-openssl\src\ssl.c">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ssl_c_duplicate0.obj</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ssl_c_duplicate0.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\sdk-lua-openssl\src\x509.c" />
+    <ClCompile Include="..\sdk-lua-openssl\src\xattrs.c" />
+    <ClCompile Include="..\sdk-lua-openssl\src\xexts.c" />
+    <ClCompile Include="..\sdk-lua-openssl\src\xname.c" />
+    <ClCompile Include="..\sdk-luasocket\src\auxiliar.c" />
+    <ClCompile Include="..\sdk-luasocket\src\buffer.c" />
+    <ClCompile Include="..\sdk-luasocket\src\context.c" />
+    <ClCompile Include="..\sdk-luasocket\src\except.c" />
+    <ClCompile Include="..\sdk-luasocket\src\inet.c" />
+    <ClCompile Include="..\sdk-luasocket\src\io.c" />
+    <ClCompile Include="..\sdk-luasocket\src\luasocket.c" />
+    <ClCompile Include="..\sdk-luasocket\src\mime.c" />
+    <ClCompile Include="..\sdk-luasocket\src\options.c" />
+    <ClCompile Include="..\sdk-luasocket\src\select.c" />
+    <ClCompile Include="..\sdk-luasocket\src\ssl.c" />
+    <ClCompile Include="..\sdk-luasocket\src\tcp.c" />
+    <ClCompile Include="..\sdk-luasocket\src\timeout.c" />
+    <ClCompile Include="..\sdk-luasocket\src\udp.c" />
+    <ClCompile Include="..\sdk-luasocket\src\wsocket.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\sdk-lua-openssl\src\corona_auxiliar.h" />
+    <ClInclude Include="..\sdk-lua-openssl\src\ec_lcl.h" />
+    <ClInclude Include="..\sdk-lua-openssl\src\openssl.h" />
+    <ClInclude Include="..\sdk-lua-openssl\src\private.h" />
+    <ClInclude Include="..\sdk-lua-openssl\src\sk.h" />
+    <ClInclude Include="..\sdk-luasocket\src\auxiliar.h" />
+    <ClInclude Include="..\sdk-luasocket\src\buffer.h" />
+    <ClInclude Include="..\sdk-luasocket\src\context.h" />
+    <ClInclude Include="..\sdk-luasocket\src\except.h" />
+    <ClInclude Include="..\sdk-luasocket\src\inet.h" />
+    <ClInclude Include="..\sdk-luasocket\src\io.h" />
+    <ClInclude Include="..\sdk-luasocket\src\luasocket.h" />
+    <ClInclude Include="..\sdk-luasocket\src\mime.h" />
+    <ClInclude Include="..\sdk-luasocket\src\options.h" />
+    <ClInclude Include="..\sdk-luasocket\src\select.h" />
+    <ClInclude Include="..\sdk-luasocket\src\socket.h" />
+    <ClInclude Include="..\sdk-luasocket\src\ssl.h" />
+    <ClInclude Include="..\sdk-luasocket\src\tcp.h" />
+    <ClInclude Include="..\sdk-luasocket\src\timeout.h" />
+    <ClInclude Include="..\sdk-luasocket\src\udp.h" />
+    <ClInclude Include="..\sdk-luasocket\src\wsocket.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\aes.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\asn1.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\asn1t.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\asn1_mac.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\bio.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\blowfish.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\bn.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\buffer.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\camellia.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\cast.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\cmac.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\cms.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\comp.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\conf.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\conf_api.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\crypto.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\des.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\des_old.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\dh.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\dsa.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\dso.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\dtls1.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\ebcdic.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\ec.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\ecdh.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\ecdsa.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\engine.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\err.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\evp.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\e_os2.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\hmac.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\idea.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\krb5_asn.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\kssl.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\lhash.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\md4.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\md5.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\mdc2.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\modes.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\objects.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\obj_mac.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\ocsp.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\opensslconf.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\opensslv.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\ossl_typ.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\pem.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\pem2.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\pkcs12.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\pkcs7.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\pqueue.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\rand.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\rc2.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\rc4.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\ripemd.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\rsa.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\safestack.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\seed.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\sha.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\srp.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\srtp.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\ssl.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\ssl2.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\ssl23.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\ssl3.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\stack.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\symhacks.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\tls1.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\ts.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\txt_db.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\ui.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\ui_compat.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\whrlpool.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\x509.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\x509v3.h" />
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\x509_vfy.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

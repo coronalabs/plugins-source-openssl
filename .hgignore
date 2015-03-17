@@ -38,6 +38,7 @@ Desktop DF
 *.dex
 *.so
 *.ncb
+*.sdf
 *.suo
 *.idb
 *.pdb

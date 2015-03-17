@@ -1,0 +1,420 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="sdk-lua-openssl">
+      <UniqueIdentifier>{cfe2759a-1912-4f7e-8292-8f8c1137b0db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sdk-luasocket">
+      <UniqueIdentifier>{62acfa91-dc76-4190-8500-4a5cee184790}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sdk-openssl">
+      <UniqueIdentifier>{817613d3-5a15-4a5a-8c32-47d357eca3ec}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\sdk-lua-openssl\src\bio.c">
+      <Filter>sdk-lua-openssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdk-lua-openssl\src\cipher.c">
+      <Filter>sdk-lua-openssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdk-lua-openssl\src\conf.c">
+      <Filter>sdk-lua-openssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdk-lua-openssl\src\corona_auxiliar.c">
+      <Filter>sdk-lua-openssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdk-lua-openssl\src\crl.c">
+      <Filter>sdk-lua-openssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdk-lua-openssl\src\csr.c">
+      <Filter>sdk-lua-openssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdk-lua-openssl\src\digest.c">
+      <Filter>sdk-lua-openssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdk-lua-openssl\src\engine.c">
+      <Filter>sdk-lua-openssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdk-lua-openssl\src\lbn.c">
+      <Filter>sdk-lua-openssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdk-lua-openssl\src\misc.c">
+      <Filter>sdk-lua-openssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdk-lua-openssl\src\ocsp.c">
+      <Filter>sdk-lua-openssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdk-lua-openssl\src\openssl.c">
+      <Filter>sdk-lua-openssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdk-lua-openssl\src\ots.c">
+      <Filter>sdk-lua-openssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdk-lua-openssl\src\pkcs12.c">
+      <Filter>sdk-lua-openssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdk-lua-openssl\src\pkcs7.c">
+      <Filter>sdk-lua-openssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdk-lua-openssl\src\pkey.c">
+      <Filter>sdk-lua-openssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdk-lua-openssl\src\plugin_luasec_https.c">
+      <Filter>sdk-lua-openssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdk-lua-openssl\src\plugin_luasec_ssl.c">
+      <Filter>sdk-lua-openssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdk-lua-openssl\src\ssl.c">
+      <Filter>sdk-lua-openssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdk-lua-openssl\src\x509.c">
+      <Filter>sdk-lua-openssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdk-lua-openssl\src\xattrs.c">
+      <Filter>sdk-lua-openssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdk-lua-openssl\src\xexts.c">
+      <Filter>sdk-lua-openssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdk-lua-openssl\src\xname.c">
+      <Filter>sdk-lua-openssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdk-luasocket\src\auxiliar.c">
+      <Filter>sdk-luasocket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdk-luasocket\src\buffer.c">
+      <Filter>sdk-luasocket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdk-luasocket\src\context.c">
+      <Filter>sdk-luasocket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdk-luasocket\src\except.c">
+      <Filter>sdk-luasocket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdk-luasocket\src\inet.c">
+      <Filter>sdk-luasocket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdk-luasocket\src\io.c">
+      <Filter>sdk-luasocket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdk-luasocket\src\luasocket.c">
+      <Filter>sdk-luasocket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdk-luasocket\src\mime.c">
+      <Filter>sdk-luasocket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdk-luasocket\src\options.c">
+      <Filter>sdk-luasocket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdk-luasocket\src\select.c">
+      <Filter>sdk-luasocket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdk-luasocket\src\ssl.c">
+      <Filter>sdk-luasocket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdk-luasocket\src\tcp.c">
+      <Filter>sdk-luasocket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdk-luasocket\src\timeout.c">
+      <Filter>sdk-luasocket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdk-luasocket\src\udp.c">
+      <Filter>sdk-luasocket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdk-luasocket\src\wsocket.c">
+      <Filter>sdk-luasocket</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\sdk-lua-openssl\src\corona_auxiliar.h">
+      <Filter>sdk-lua-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-lua-openssl\src\ec_lcl.h">
+      <Filter>sdk-lua-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-lua-openssl\src\openssl.h">
+      <Filter>sdk-lua-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-lua-openssl\src\private.h">
+      <Filter>sdk-lua-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-lua-openssl\src\sk.h">
+      <Filter>sdk-lua-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-luasocket\src\auxiliar.h">
+      <Filter>sdk-luasocket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-luasocket\src\buffer.h">
+      <Filter>sdk-luasocket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-luasocket\src\context.h">
+      <Filter>sdk-luasocket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-luasocket\src\except.h">
+      <Filter>sdk-luasocket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-luasocket\src\inet.h">
+      <Filter>sdk-luasocket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-luasocket\src\io.h">
+      <Filter>sdk-luasocket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-luasocket\src\luasocket.h">
+      <Filter>sdk-luasocket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-luasocket\src\mime.h">
+      <Filter>sdk-luasocket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-luasocket\src\options.h">
+      <Filter>sdk-luasocket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-luasocket\src\select.h">
+      <Filter>sdk-luasocket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-luasocket\src\socket.h">
+      <Filter>sdk-luasocket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-luasocket\src\ssl.h">
+      <Filter>sdk-luasocket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-luasocket\src\tcp.h">
+      <Filter>sdk-luasocket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-luasocket\src\timeout.h">
+      <Filter>sdk-luasocket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-luasocket\src\udp.h">
+      <Filter>sdk-luasocket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-luasocket\src\wsocket.h">
+      <Filter>sdk-luasocket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\aes.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\asn1.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\asn1_mac.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\asn1t.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\bio.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\blowfish.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\bn.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\buffer.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\camellia.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\cast.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\cmac.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\cms.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\comp.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\conf.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\conf_api.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\crypto.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\des.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\des_old.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\dh.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\dsa.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\dso.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\dtls1.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\e_os2.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\ebcdic.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\ec.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\ecdh.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\ecdsa.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\engine.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\err.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\evp.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\hmac.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\idea.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\krb5_asn.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\kssl.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\lhash.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\md4.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\md5.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\mdc2.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\modes.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\obj_mac.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\objects.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\ocsp.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\opensslconf.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\opensslv.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\ossl_typ.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\pem.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\pem2.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\pkcs12.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\pkcs7.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\pqueue.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\rand.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\rc2.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\rc4.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\ripemd.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\rsa.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\safestack.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\seed.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\sha.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\srp.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\srtp.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\ssl.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\ssl2.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\ssl23.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\ssl3.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\stack.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\symhacks.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\tls1.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\ts.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\txt_db.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\ui.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\ui_compat.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\whrlpool.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\x509.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\x509_vfy.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk-openssl\win32\include\openssl\x509v3.h">
+      <Filter>sdk-openssl</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
