@@ -1,12 +1,12 @@
 [submodule "sdk-lua-openssl"]
-	path = ./sdk-lua-openssl
+	path = sdk-lua-openssl
 	url = git@bitbucket.org:coronalabs/git-plugins-source-sdk-lua-openssl.git
 
 [submodule "sdk-luasocket"]
-	path = ./sdk-luasocket
+	path = sdk-luasocket
 	url = git@bitbucket.org:coronalabs/git-plugins-source-sdk-luasocket.git
 
 [submodule "sdk-openssl"]
-	path = ./sdk-openssl
+	path = sdk-openssl
 	url = git@bitbucket.org:coronalabs/git-plugins-source-sdk-openssl.git
 
