@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C2913391C6D67B3004AA66C /* plugin_luasec_options.c in Sources */ = {isa = PBXBuildFile; fileRef = 4C2913381C6D67B3004AA66C /* plugin_luasec_options.c */; };
+		4CB889391C61470000CB6DF2 /* x509.c in Sources */ = {isa = PBXBuildFile; fileRef = 4CB889371C61470000CB6DF2 /* x509.c */; };
+		4CB8893A1C61470000CB6DF2 /* x509.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CB889381C61470000CB6DF2 /* x509.h */; };
+		4CB8893C1C61471200CB6DF2 /* ec.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CB8893B1C61471200CB6DF2 /* ec.h */; };
+		4CB8893E1C61472400CB6DF2 /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CB8893D1C61472400CB6DF2 /* config.h */; };
 		5041FA7D1729D8E8009F5D8B /* bio.c in Sources */ = {isa = PBXBuildFile; fileRef = 5041FA621729D8E8009F5D8B /* bio.c */; };
 		5041FA7E1729D8E8009F5D8B /* cipher.c in Sources */ = {isa = PBXBuildFile; fileRef = 5041FA631729D8E8009F5D8B /* cipher.c */; };
 		5041FA7F1729D8E8009F5D8B /* conf.c in Sources */ = {isa = PBXBuildFile; fileRef = 5041FA641729D8E8009F5D8B /* conf.c */; };
@@ -88,6 +93,11 @@
 /* End PBXBuildRule section */
 
 /* Begin PBXFileReference section */
+		4C2913381C6D67B3004AA66C /* plugin_luasec_options.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = plugin_luasec_options.c; path = "../sdk-lua-openssl/src/plugin_luasec_options.c"; sourceTree = "<group>"; };
+		4CB889371C61470000CB6DF2 /* x509.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = x509.c; path = "../sdk-luasocket/src/x509.c"; sourceTree = "<group>"; };
+		4CB889381C61470000CB6DF2 /* x509.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = x509.h; path = "../sdk-luasocket/src/x509.h"; sourceTree = "<group>"; };
+		4CB8893B1C61471200CB6DF2 /* ec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ec.h; path = "../sdk-luasocket/src/ec.h"; sourceTree = "<group>"; };
+		4CB8893D1C61472400CB6DF2 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = config.h; path = "../sdk-luasocket/src/config.h"; sourceTree = "<group>"; };
 		5041FA621729D8E8009F5D8B /* bio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = bio.c; path = "../sdk-lua-openssl/src/bio.c"; sourceTree = "<group>"; };
 		5041FA631729D8E8009F5D8B /* cipher.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = cipher.c; path = "../sdk-lua-openssl/src/cipher.c"; sourceTree = "<group>"; };
 		5041FA641729D8E8009F5D8B /* conf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = conf.c; path = "../sdk-lua-openssl/src/conf.c"; sourceTree = "<group>"; };
@@ -200,6 +210,7 @@
 				5041FA731729D8E8009F5D8B /* pkcs7.c */,
 				5041FA751729D8E8009F5D8B /* pkey.c */,
 				50BCAB091762B75A009C7F8A /* plugin_luasec_https.c */,
+				4C2913381C6D67B3004AA66C /* plugin_luasec_options.c */,
 				50BCAB0A1762B75A009C7F8A /* plugin_luasec_ssl.c */,
 				5041FA761729D8E8009F5D8B /* private.h */,
 				5041FA771729D8E8009F5D8B /* sk.h */,
@@ -219,8 +230,10 @@
 				50EE5B071729EC6600918343 /* auxiliar.h */,
 				50EE5B081729EC6600918343 /* buffer.c */,
 				50EE5B091729EC6600918343 /* buffer.h */,
+				4CB8893D1C61472400CB6DF2 /* config.h */,
 				50D4539B1760296E00776C41 /* context.c */,
 				50D4539C1760296E00776C41 /* context.h */,
+				4CB8893B1C61471200CB6DF2 /* ec.h */,
 				50EE5B0A1729EC6600918343 /* except.c */,
 				50EE5B0B1729EC6600918343 /* except.h */,
 				50EE5B0C1729EC6600918343 /* ftp.lua */,
@@ -257,6 +270,8 @@
 				50EE5B291729EC6600918343 /* url.lua */,
 				50EE5B2A1729EC6600918343 /* usocket.c */,
 				50EE5B2B1729EC6600918343 /* usocket.h */,
+				4CB889371C61470000CB6DF2 /* x509.c */,
+				4CB889381C61470000CB6DF2 /* x509.h */,
 			);
 			name = "sdk-luasocket";
 			sourceTree = "<group>";
@@ -301,13 +316,16 @@
 				5041FA8B1729D8E8009F5D8B /* openssl.h in Headers */,
 				5041FA901729D8E8009F5D8B /* private.h in Headers */,
 				5041FA911729D8E8009F5D8B /* sk.h in Headers */,
+				4CB8893A1C61470000CB6DF2 /* x509.h in Headers */,
 				50EE5B2F1729EC6600918343 /* auxiliar.h in Headers */,
 				50EE5B311729EC6600918343 /* buffer.h in Headers */,
 				50EE5B331729EC6600918343 /* except.h in Headers */,
 				50EE5B351729EC6600918343 /* inet.h in Headers */,
+				4CB8893C1C61471200CB6DF2 /* ec.h in Headers */,
 				50EE5B371729EC6600918343 /* io.h in Headers */,
 				50EE5B391729EC6600918343 /* luasocket.h in Headers */,
 				50EE5B3C1729EC6600918343 /* mime.h in Headers */,
+				4CB8893E1C61472400CB6DF2 /* config.h in Headers */,
 				50EE5B3E1729EC6600918343 /* options.h in Headers */,
 				50EE5B401729EC6600918343 /* select.h in Headers */,
 				50EE5B411729EC6600918343 /* socket.h in Headers */,
@@ -328,6 +346,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A491863D1641DDB800A39286 /* Build configuration list for PBXNativeTarget "plugin_openssl" */;
 			buildPhases = (
+				4C29133A1C6D6815004AA66C /* ShellScript */,
 				A49186341641DDB800A39286 /* Sources */,
 				A49186381641DDB800A39286 /* Frameworks */,
 				A491863A1641DDB800A39286 /* Headers */,
@@ -367,6 +386,22 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4C29133A1C6D6815004AA66C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "OUT_DIR=\"$SRCROOT/../sdk-lua-openssl/src\"\nCORONA_MAC_BIN_DIR=/Applications/CoronaEnterprise/Corona/mac/bin\n\n# Check for lua\nLUA_PATH=$CORONA_MAC_BIN_DIR/lua\nif [[ ! -x \"$LUA_PATH\" ]]; then\necho \"Could not find proper 32-bit lua build at $LUA_PATH\"\nexit 1\nfi\n\"$LUA_PATH\" -v\n\n# Compile each lua file.\nLUA2C_PATH=$CORONA_MAC_BIN_DIR/lua2c.sh\nLUA2C_INPUT_DIR=$SRCROOT/../sdk-lua-openssl/input_for_lua2c\nfind \"$LUA2C_INPUT_DIR\" -type f -name \"*.lua\" -print0 | xargs -0 -I {} \"$LUA2C_PATH\" \"{}\" \"$OUT_DIR\" \"Release\" \"$CORONA_MAC_BIN_DIR\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A49186341641DDB800A39286 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -384,6 +419,7 @@
 				5041FA881729D8E8009F5D8B /* misc.c in Sources */,
 				5041FA891729D8E8009F5D8B /* ocsp.c in Sources */,
 				5041FA8A1729D8E8009F5D8B /* openssl.c in Sources */,
+				4C2913391C6D67B3004AA66C /* plugin_luasec_options.c in Sources */,
 				5041FA8C1729D8E8009F5D8B /* ots.c in Sources */,
 				5041FA8D1729D8E8009F5D8B /* pkcs7.c in Sources */,
 				5041FA8E1729D8E8009F5D8B /* pkcs12.c in Sources */,
@@ -409,6 +445,7 @@
 				50EE5B481729EC6600918343 /* unix.c in Sources */,
 				50EE5B4A1729EC6600918343 /* usocket.c in Sources */,
 				50D4539F1760296E00776C41 /* context.c in Sources */,
+				4CB889391C61470000CB6DF2 /* x509.c in Sources */,
 				50D453A11760296E00776C41 /* ssl.c in Sources */,
 				50BCAB0B1762B75A009C7F8A /* plugin_luasec_https.c in Sources */,
 				50BCAB0C1762B75A009C7F8A /* plugin_luasec_ssl.c in Sources */,

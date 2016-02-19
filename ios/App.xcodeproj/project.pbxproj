@@ -7,23 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4C861A7D1C60391800B48BFA /* config.lua in Resources */ = {isa = PBXBuildFile; fileRef = 4C861A731C60391800B48BFA /* config.lua */; };
-		4C861A7E1C60391800B48BFA /* main.lua in Resources */ = {isa = PBXBuildFile; fileRef = 4C861A741C60391800B48BFA /* main.lua */; };
-		4C861A7F1C60391800B48BFA /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C861A751C60391800B48BFA /* Icon-72.png */; };
-		4C861A801C60391800B48BFA /* Icon-hdpi.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C861A761C60391800B48BFA /* Icon-hdpi.png */; };
-		4C861A811C60391800B48BFA /* Icon-ldpi.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C861A771C60391800B48BFA /* Icon-ldpi.png */; };
-		4C861A821C60391800B48BFA /* Icon-mdpi.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C861A781C60391800B48BFA /* Icon-mdpi.png */; };
-		4C861A831C60391800B48BFA /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C861A791C60391800B48BFA /* Icon.png */; };
-		4C861A841C60391800B48BFA /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C861A7A1C60391800B48BFA /* Icon@2x.png */; };
-		4C861A851C60391800B48BFA /* space.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C861A7B1C60391800B48BFA /* space.png */; };
-		4C861A861C60391800B48BFA /* build.settings in Resources */ = {isa = PBXBuildFile; fileRef = 4C861A7C1C60391800B48BFA /* build.settings */; };
-		504B0D431A2FD1AF004CC7DE /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A484112315114F700074BD57 /* GLKit.framework */; };
-		504B0D451A2FD1BA004CC7DE /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 504B0D441A2FD1BA004CC7DE /* CoreVideo.framework */; };
+		4CF78DE61C6A787D00BAE4F6 /* libplugin.openssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CF78DE51C6A752400BAE4F6 /* libplugin.openssl.a */; };
 		A447B610165D72FB009EA762 /* AppCoronaDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = A447B60F165D72FB009EA762 /* AppCoronaDelegate.mm */; };
 		A447B6671666FD02009EA762 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = A447B6641666FD02009EA762 /* MainWindow-iPad.xib */; };
 		A447B6681666FD02009EA762 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A447B6651666FD02009EA762 /* MainWindow.xib */; };
 		A447B66A1666FD43009EA762 /* CoronaSDK3rdPartyLicenses.txt in Resources */ = {isa = PBXBuildFile; fileRef = A447B6691666FD43009EA762 /* CoronaSDK3rdPartyLicenses.txt */; };
 		A447B67C16675195009EA762 /* libplayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A447B67116670028009EA762 /* libplayer.a */; };
+		A46885F218068C2200381941 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A484112315114F700074BD57 /* GLKit.framework */; };
+		A46885F418068C2900381941 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A46885F318068C2900381941 /* CoreVideo.framework */; };
 		A484111E15114F700074BD57 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A484111D15114F700074BD57 /* UIKit.framework */; };
 		A484112015114F700074BD57 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A484111F15114F700074BD57 /* Foundation.framework */; };
 		A484112215114F700074BD57 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A484112115114F700074BD57 /* CoreGraphics.framework */; };
@@ -51,49 +42,33 @@
 		A484118915128D5D0074BD57 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A484117515128D5D0074BD57 /* StoreKit.framework */; };
 		A484118A15128D5D0074BD57 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A484117615128D5D0074BD57 /* SystemConfiguration.framework */; };
 		A48411CA15129F610074BD57 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A48411C915129F610074BD57 /* libsqlite3.dylib */; };
-		A489DE2B16854301007FB757 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A489DE2816854301007FB757 /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		A489DE2C16854301007FB757 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A489DE2916854301007FB757 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		A489DE2D16854301007FB757 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A489DE2A16854301007FB757 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		A498B81A16D70EFC0091A148 /* CoronaResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A498B81916D70EFC0091A148 /* CoronaResources.bundle */; };
+		A4C2449A1683FA5300C395D1 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4C244971683FA5300C395D1 /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		A4C2449C1683FA5300C395D1 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4C244991683FA5300C395D1 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		A4E2537F166AE3DC00DCDC2C /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4E2537E166AE3DC00DCDC2C /* Twitter.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		A4E253E5166DE7E000DCDC2C /* libplugin.openssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A4E253E2166DE7C800DCDC2C /* libplugin.openssl.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A4E253E1166DE7C800DCDC2C /* PBXContainerItemProxy */ = {
+		4CF78DE41C6A752400BAE4F6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = A4E253DA166DE7C800DCDC2C /* Plugin.xcodeproj */;
+			containerPortal = 4CF78DE01C6A752400BAE4F6 /* Plugin.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = A4E253B6166D6FB300DCDC2C;
-			remoteInfo = plugin_library;
-		};
-		A4E253E3166DE7D800DCDC2C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A4E253DA166DE7C800DCDC2C /* Plugin.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = A4E253B5166D6FB300DCDC2C;
-			remoteInfo = plugin_library;
+			remoteInfo = plugin.openssl;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4C861A731C60391800B48BFA /* config.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = config.lua; path = ../../Corona/luasec/config.lua; sourceTree = "<group>"; };
-		4C861A741C60391800B48BFA /* main.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = main.lua; path = ../../Corona/luasec/main.lua; sourceTree = "<group>"; };
-		4C861A751C60391800B48BFA /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "../../Corona/luasec/Icon-72.png"; sourceTree = "<group>"; };
-		4C861A761C60391800B48BFA /* Icon-hdpi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-hdpi.png"; path = "../../Corona/luasec/Icon-hdpi.png"; sourceTree = "<group>"; };
-		4C861A771C60391800B48BFA /* Icon-ldpi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-ldpi.png"; path = "../../Corona/luasec/Icon-ldpi.png"; sourceTree = "<group>"; };
-		4C861A781C60391800B48BFA /* Icon-mdpi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-mdpi.png"; path = "../../Corona/luasec/Icon-mdpi.png"; sourceTree = "<group>"; };
-		4C861A791C60391800B48BFA /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../../Corona/luasec/Icon.png; sourceTree = "<group>"; };
-		4C861A7A1C60391800B48BFA /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../../Corona/luasec/Icon@2x.png"; sourceTree = "<group>"; };
-		4C861A7B1C60391800B48BFA /* space.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = space.png; path = ../../Corona/luasec/space.png; sourceTree = "<group>"; };
-		4C861A7C1C60391800B48BFA /* build.settings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = build.settings; path = ../../Corona/luasec/build.settings; sourceTree = "<group>"; };
-		504B0D441A2FD1BA004CC7DE /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		4CF78DE01C6A752400BAE4F6 /* Plugin.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Plugin.xcodeproj; sourceTree = "<group>"; };
 		A447B60E165D72FB009EA762 /* AppCoronaDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppCoronaDelegate.h; sourceTree = SOURCE_ROOT; };
 		A447B60F165D72FB009EA762 /* AppCoronaDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppCoronaDelegate.mm; sourceTree = SOURCE_ROOT; };
 		A447B6641666FD02009EA762 /* MainWindow-iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "MainWindow-iPad.xib"; path = "CoronaEnterprise/Corona/ios/resource/MainWindow-iPad.xib"; sourceTree = SOURCE_ROOT; };
 		A447B6651666FD02009EA762 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainWindow.xib; path = CoronaEnterprise/Corona/ios/resource/MainWindow.xib; sourceTree = SOURCE_ROOT; };
 		A447B6691666FD43009EA762 /* CoronaSDK3rdPartyLicenses.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CoronaSDK3rdPartyLicenses.txt; path = CoronaEnterprise/Corona/shared/resource/CoronaSDK3rdPartyLicenses.txt; sourceTree = SOURCE_ROOT; };
 		A447B67116670028009EA762 /* libplayer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libplayer.a; path = CoronaEnterprise/Corona/ios/lib/libplayer.a; sourceTree = SOURCE_ROOT; };
-		A484111915114F700074BD57 /* OpensslTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpensslTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A447B824166856F3009EA762 /* main.lua */ = {isa = PBXFileReference; lastKnownFileType = text; name = main.lua; path = ../Corona/main.lua; sourceTree = SOURCE_ROOT; };
+		A46885F318068C2900381941 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		A484111915114F700074BD57 /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A484111D15114F700074BD57 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A484111F15114F700074BD57 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A484112115114F700074BD57 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -124,11 +99,10 @@
 		A484117515128D5D0074BD57 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		A484117615128D5D0074BD57 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A48411C915129F610074BD57 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		A489DE2816854301007FB757 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
-		A489DE2916854301007FB757 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
-		A489DE2A16854301007FB757 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		A498B81916D70EFC0091A148 /* CoronaResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = CoronaResources.bundle; path = CoronaEnterprise/Corona/ios/resource/CoronaResources.bundle; sourceTree = SOURCE_ROOT; };
+		A4C244971683FA5300C395D1 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		A4C244991683FA5300C395D1 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		A4E2537E166AE3DC00DCDC2C /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
-		A4E253DA166DE7C800DCDC2C /* Plugin.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Plugin.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,11 +110,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				504B0D451A2FD1BA004CC7DE /* CoreVideo.framework in Frameworks */,
-				504B0D431A2FD1AF004CC7DE /* GLKit.framework in Frameworks */,
-				A489DE2B16854301007FB757 /* Accounts.framework in Frameworks */,
-				A489DE2C16854301007FB757 /* AdSupport.framework in Frameworks */,
-				A489DE2D16854301007FB757 /* Social.framework in Frameworks */,
+				A46885F418068C2900381941 /* CoreVideo.framework in Frameworks */,
+				A46885F218068C2200381941 /* GLKit.framework in Frameworks */,
+				A4C2449A1683FA5300C395D1 /* Accounts.framework in Frameworks */,
+				A4C2449C1683FA5300C395D1 /* Social.framework in Frameworks */,
 				A484117715128D5D0074BD57 /* AddressBook.framework in Frameworks */,
 				A484117815128D5D0074BD57 /* AddressBookUI.framework in Frameworks */,
 				A484117915128D5D0074BD57 /* AudioToolbox.framework in Frameworks */,
@@ -168,13 +141,21 @@
 				A4E2537F166AE3DC00DCDC2C /* Twitter.framework in Frameworks */,
 				A484111E15114F700074BD57 /* UIKit.framework in Frameworks */,
 				A447B67C16675195009EA762 /* libplayer.a in Frameworks */,
-				A4E253E5166DE7E000DCDC2C /* libplugin.openssl.a in Frameworks */,
+				4CF78DE61C6A787D00BAE4F6 /* libplugin.openssl.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4CF78DE11C6A752400BAE4F6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4CF78DE51C6A752400BAE4F6 /* libplugin.openssl.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		A447B66F16670015009EA762 /* CoronaEnterprise */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,16 +176,7 @@
 		A447B823166856C7009EA762 /* Corona */ = {
 			isa = PBXGroup;
 			children = (
-				4C861A731C60391800B48BFA /* config.lua */,
-				4C861A741C60391800B48BFA /* main.lua */,
-				4C861A751C60391800B48BFA /* Icon-72.png */,
-				4C861A761C60391800B48BFA /* Icon-hdpi.png */,
-				4C861A771C60391800B48BFA /* Icon-ldpi.png */,
-				4C861A781C60391800B48BFA /* Icon-mdpi.png */,
-				4C861A791C60391800B48BFA /* Icon.png */,
-				4C861A7A1C60391800B48BFA /* Icon@2x.png */,
-				4C861A7B1C60391800B48BFA /* space.png */,
-				4C861A7C1C60391800B48BFA /* build.settings */,
+				A447B824166856F3009EA762 /* main.lua */,
 			);
 			name = Corona;
 			path = CoronaSampleApp;
@@ -213,7 +185,7 @@
 		A484110E15114F700074BD57 = {
 			isa = PBXGroup;
 			children = (
-				A4E253DA166DE7C800DCDC2C /* Plugin.xcodeproj */,
+				4CF78DE01C6A752400BAE4F6 /* Plugin.xcodeproj */,
 				A484112715114F700074BD57 /* App */,
 				A447B823166856C7009EA762 /* Corona */,
 				A447B66F16670015009EA762 /* CoronaEnterprise */,
@@ -225,7 +197,7 @@
 		A484111A15114F700074BD57 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A484111915114F700074BD57 /* OpensslTestApp.app */,
+				A484111915114F700074BD57 /* App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -233,10 +205,11 @@
 		A484111C15114F700074BD57 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A489DE2816854301007FB757 /* Accounts.framework */,
+				A46885F318068C2900381941 /* CoreVideo.framework */,
+				A4C244971683FA5300C395D1 /* Accounts.framework */,
+				A4C244991683FA5300C395D1 /* Social.framework */,
 				A484116315128D5C0074BD57 /* AddressBook.framework */,
 				A484116415128D5C0074BD57 /* AddressBookUI.framework */,
-				A489DE2916854301007FB757 /* AdSupport.framework */,
 				A484116515128D5C0074BD57 /* AudioToolbox.framework */,
 				A484116615128D5C0074BD57 /* AVFoundation.framework */,
 				A484116715128D5C0074BD57 /* CFNetwork.framework */,
@@ -244,7 +217,6 @@
 				A484116815128D5C0074BD57 /* CoreLocation.framework */,
 				A484116915128D5C0074BD57 /* CoreMedia.framework */,
 				A484116A15128D5C0074BD57 /* CoreMotion.framework */,
-				504B0D441A2FD1BA004CC7DE /* CoreVideo.framework */,
 				A484111F15114F700074BD57 /* Foundation.framework */,
 				A484116B15128D5D0074BD57 /* GameKit.framework */,
 				A484112315114F700074BD57 /* GLKit.framework */,
@@ -259,7 +231,6 @@
 				A484112515114F700074BD57 /* OpenGLES.framework */,
 				A484117315128D5D0074BD57 /* QuartzCore.framework */,
 				A484117415128D5D0074BD57 /* Security.framework */,
-				A489DE2A16854301007FB757 /* Social.framework */,
 				A484117515128D5D0074BD57 /* StoreKit.framework */,
 				A484117615128D5D0074BD57 /* SystemConfiguration.framework */,
 				A4E2537E166AE3DC00DCDC2C /* Twitter.framework */,
@@ -285,6 +256,7 @@
 		A4841153151161300074BD57 /* resource */ = {
 			isa = PBXGroup;
 			children = (
+				A498B81916D70EFC0091A148 /* CoronaResources.bundle */,
 				A447B6691666FD43009EA762 /* CoronaSDK3rdPartyLicenses.txt */,
 				A447B6641666FD02009EA762 /* MainWindow-iPad.xib */,
 				A447B6651666FD02009EA762 /* MainWindow.xib */,
@@ -293,20 +265,12 @@
 			path = CoronaSampleApp;
 			sourceTree = "<group>";
 		};
-		A4E253DB166DE7C800DCDC2C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A4E253E2166DE7C800DCDC2C /* libplugin.openssl.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A484111815114F700074BD57 /* OpensslTestApp */ = {
+		A484111815114F700074BD57 /* App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A484114215114F700074BD57 /* Build configuration list for PBXNativeTarget "OpensslTestApp" */;
+			buildConfigurationList = A484114215114F700074BD57 /* Build configuration list for PBXNativeTarget "App" */;
 			buildPhases = (
 				A484111715114F700074BD57 /* Resources */,
 				A484111515114F700074BD57 /* Sources */,
@@ -319,11 +283,10 @@
 			buildRules = (
 			);
 			dependencies = (
-				A4E253E4166DE7D800DCDC2C /* PBXTargetDependency */,
 			);
-			name = OpensslTestApp;
+			name = App;
 			productName = CoronaSampleApp;
-			productReference = A484111915114F700074BD57 /* OpensslTestApp.app */;
+			productReference = A484111915114F700074BD57 /* App.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -333,13 +296,8 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0420;
-				TargetAttributes = {
-					A484111815114F700074BD57 = {
-						DevelopmentTeam = BG2J43EA88;
-					};
-				};
 			};
-			buildConfigurationList = A484111315114F700074BD57 /* Build configuration list for PBXProject "OpensslTestApp" */;
+			buildConfigurationList = A484111315114F700074BD57 /* Build configuration list for PBXProject "App" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -351,23 +309,23 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = A4E253DB166DE7C800DCDC2C /* Products */;
-					ProjectRef = A4E253DA166DE7C800DCDC2C /* Plugin.xcodeproj */;
+					ProductGroup = 4CF78DE11C6A752400BAE4F6 /* Products */;
+					ProjectRef = 4CF78DE01C6A752400BAE4F6 /* Plugin.xcodeproj */;
 				},
 			);
 			projectRoot = "";
 			targets = (
-				A484111815114F700074BD57 /* OpensslTestApp */,
+				A484111815114F700074BD57 /* App */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		A4E253E2166DE7C800DCDC2C /* libplugin.openssl.a */ = {
+		4CF78DE51C6A752400BAE4F6 /* libplugin.openssl.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libplugin.openssl.a;
-			remoteRef = A4E253E1166DE7C800DCDC2C /* PBXContainerItemProxy */;
+			remoteRef = 4CF78DE41C6A752400BAE4F6 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -378,19 +336,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A484112C15114F700074BD57 /* InfoPlist.strings in Resources */,
-				4C861A841C60391800B48BFA /* Icon@2x.png in Resources */,
-				4C861A7E1C60391800B48BFA /* main.lua in Resources */,
-				4C861A861C60391800B48BFA /* build.settings in Resources */,
-				4C861A811C60391800B48BFA /* Icon-ldpi.png in Resources */,
 				A447B6671666FD02009EA762 /* MainWindow-iPad.xib in Resources */,
-				4C861A821C60391800B48BFA /* Icon-mdpi.png in Resources */,
-				4C861A851C60391800B48BFA /* space.png in Resources */,
-				4C861A801C60391800B48BFA /* Icon-hdpi.png in Resources */,
 				A447B6681666FD02009EA762 /* MainWindow.xib in Resources */,
 				A447B66A1666FD43009EA762 /* CoronaSDK3rdPartyLicenses.txt in Resources */,
-				4C861A831C60391800B48BFA /* Icon.png in Resources */,
-				4C861A7F1C60391800B48BFA /* Icon-72.png in Resources */,
-				4C861A7D1C60391800B48BFA /* config.lua in Resources */,
+				A498B81A16D70EFC0091A148 /* CoronaResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,14 +418,6 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		A4E253E4166DE7D800DCDC2C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = plugin_library;
-			targetProxy = A4E253E3166DE7D800DCDC2C /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
 		A484112A15114F700074BD57 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
@@ -537,10 +478,12 @@
 		A484114315114F700074BD57 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEAD_CODE_STRIPPING = NO;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/CoronaEnterprise/Plugins/sdk-facebook/ios\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Prefix.pch;
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
@@ -549,11 +492,10 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/CoronaEnterprise/Corona/ios/lib\"",
-					"\"$(SRCROOT)/../sdk-openssl/AppleUniversal/lib\"",
+					.,
 				);
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
 				SEPARATE_STRIP = YES;
 				STRIP_INSTALLED_PRODUCT = YES;
 				STRIP_STYLE = "non-global";
@@ -564,10 +506,12 @@
 		A484114415114F700074BD57 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEAD_CODE_STRIPPING = NO;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/CoronaEnterprise/Plugins/sdk-facebook/ios\"",
+				);
 				GCC_OPTIMIZATION_LEVEL = 2;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Prefix.pch;
@@ -576,11 +520,10 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/CoronaEnterprise/Corona/ios/lib\"",
-					"\"$(SRCROOT)/../sdk-openssl/AppleUniversal/lib\"",
+					.,
 				);
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
 				SEPARATE_STRIP = YES;
 				STRIP_INSTALLED_PRODUCT = YES;
 				STRIP_STYLE = "non-global";
@@ -591,7 +534,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A484111315114F700074BD57 /* Build configuration list for PBXProject "OpensslTestApp" */ = {
+		A484111315114F700074BD57 /* Build configuration list for PBXProject "App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A484114015114F700074BD57 /* Debug */,
@@ -600,7 +543,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A484114215114F700074BD57 /* Build configuration list for PBXNativeTarget "OpensslTestApp" */ = {
+		A484114215114F700074BD57 /* Build configuration list for PBXNativeTarget "App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A484114315114F700074BD57 /* Debug */,
