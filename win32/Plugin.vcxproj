@@ -123,6 +123,7 @@
     <ClCompile Include="..\sdk-lua-openssl\src\xexts.c" />
     <ClCompile Include="..\sdk-lua-openssl\src\xname.c" />
     <ClCompile Include="..\sdk-luasocket\src\auxiliar.c" />
+    <ClCompile Include="..\sdk-luasocket\src\compat.c" />
     <ClCompile Include="..\sdk-luasocket\src\buffer.c" />
     <ClCompile Include="..\sdk-luasocket\src\context.c" />
     <ClCompile Include="..\sdk-luasocket\src\except.c" />
@@ -137,6 +138,10 @@
     <ClCompile Include="..\sdk-luasocket\src\timeout.c" />
     <ClCompile Include="..\sdk-luasocket\src\udp.c" />
     <ClCompile Include="..\sdk-luasocket\src\wsocket.c" />
+    <ClCompile Include="..\sdk-luasocket\src\x509.c">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)x509_c_duplicate0.obj</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)x509_c_duplicate0.obj</ObjectFileName>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\sdk-lua-openssl\src\corona_auxiliar.h" />
@@ -145,6 +150,7 @@
     <ClInclude Include="..\sdk-lua-openssl\src\private.h" />
     <ClInclude Include="..\sdk-lua-openssl\src\sk.h" />
     <ClInclude Include="..\sdk-luasocket\src\auxiliar.h" />
+    <ClInclude Include="..\sdk-luasocket\src\compat.h" />
     <ClInclude Include="..\sdk-luasocket\src\buffer.h" />
     <ClInclude Include="..\sdk-luasocket\src\context.h" />
     <ClInclude Include="..\sdk-luasocket\src\except.h" />
