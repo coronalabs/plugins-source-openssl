@@ -549,7 +549,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/CoronaEnterprise/Corona/ios/lib\"",
-					"\"$(SRCROOT)/../sdk-openssl/AppleUniversal/lib\"",
+					"\"$(SRCROOT)/../sdk-openssl/ios/lib\"",
 				);
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -576,7 +576,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/CoronaEnterprise/Corona/ios/lib\"",
-					"\"$(SRCROOT)/../sdk-openssl/AppleUniversal/lib\"",
+					"\"$(SRCROOT)/../sdk-openssl/ios/lib\"",
 				);
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -55,8 +55,8 @@
 		4C9A8E131C619C5000F97F19 /* plugin_luasec_options.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = plugin_luasec_options.c; path = "../sdk-lua-openssl/src/plugin_luasec_options.c"; sourceTree = "<group>"; };
 		4CB8893F1C61476F00CB6DF2 /* x509.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = x509.c; path = "../sdk-luasocket/src/x509.c"; sourceTree = "<group>"; };
 		4CB889401C61476F00CB6DF2 /* x509.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = x509.h; path = "../sdk-luasocket/src/x509.h"; sourceTree = "<group>"; };
-		502D3C7B171E32B100040046 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = "../sdk-openssl/AppleUniversal/lib/libcrypto.a"; sourceTree = "<group>"; };
-		502D3C7C171E32B100040046 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = "../sdk-openssl/AppleUniversal/lib/libssl.a"; sourceTree = "<group>"; };
+		502D3C7B171E32B100040046 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = "../sdk-openssl/apple/lib/libcrypto.a"; sourceTree = "<group>"; };
+		502D3C7C171E32B100040046 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = "../sdk-openssl/apple/lib/libssl.a"; sourceTree = "<group>"; };
 		50362DBF17209608009972A3 /* bio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = bio.c; path = "../sdk-lua-openssl/src/bio.c"; sourceTree = "<group>"; };
 		50362DC017209608009972A3 /* cipher.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = cipher.c; path = "../sdk-lua-openssl/src/cipher.c"; sourceTree = "<group>"; };
 		50362DC117209608009972A3 /* conf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = conf.c; path = "../sdk-lua-openssl/src/conf.c"; sourceTree = "<group>"; };
@@ -337,14 +337,14 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				HEADER_SEARCH_PATHS = (
-					"../sdk-openssl/AppleUniversal/include",
+					"../sdk-openssl/apple/include",
 					"../sdk-luasocket/src",
 					"../sdk-lua-openssl/src",
 					"${SRCROOT}/CoronaEnterprise/Corona/shared/include/lua",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"../sdk-openssl/AppleUniversal/lib",
+					"../sdk-openssl/apple/lib",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -363,13 +363,13 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				HEADER_SEARCH_PATHS = (
-					"../sdk-openssl/AppleUniversal/include",
+					"../sdk-openssl/apple/include",
 					"../sdk-luasocket/src",
 					"${SRCROOT}/CoronaEnterprise/Corona/shared/include/lua",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"../sdk-openssl/AppleUniversal/lib",
+					"../sdk-openssl/apple/lib",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
