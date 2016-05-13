@@ -90,5 +90,8 @@ popd > /dev/null
 # Post-compile Steps #
 ######################
 
+rm "$LIBS_DST_DIR"/libcorona.so $path/libs/armeabi-v7a/libcorona.so
+rm "$LIBS_DST_DIR"/liblua.so $path/libs/armeabi-v7a/liblua.so
+
 echo Done.
 echo $path/libs/armeabi-v7a/libplugin.openssl.so

@@ -14,7 +14,7 @@ PLUGIN_DIR := ../..
 
 SDK_LUA_OPENSSL := $(PLUGIN_DIR)/sdk-lua-openssl/src
 SDK_LUASOCKET := $(PLUGIN_DIR)/sdk-luasocket/src
-SDK_OPENSSL := $(PLUGIN_DIR)/sdk-openssl/android
+SDK_OPENSSL := $(PLUGIN_DIR)/sdk-openssl/android/libs
 
 # -----------------------------------------------------------------------------
 
@@ -64,6 +64,7 @@ LOCAL_C_INCLUDES := \
 LOCAL_SRC_FILES := \
 	$(SDK_LUASOCKET)/auxiliar.c \
 	$(SDK_LUASOCKET)/buffer.c \
+	$(SDK_LUASOCKET)/compat.c \
 	$(SDK_LUASOCKET)/context.c \
 	$(SDK_LUASOCKET)/except.c \
 	$(SDK_LUASOCKET)/inet.c \
