@@ -2,8 +2,12 @@
 -- Sample code is MIT licensed, see http://www.coronalabs.com/links/code/license
 -- Copyright (C) 2012 Corona Labs Inc. All Rights Reserved.
 --------------------------------------------------------------------------------
+local greeting = display.newText("OpenSSL tests - see console for results", display.actualContentWidth/2, 20)
 
 print( "OpenSSL sample start." )
+
+Runtime:setCheckGlobals( true )
+local crypto = require "crypto"
 
 local openssl = require('plugin.openssl')
 local util = require('util')

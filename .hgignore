@@ -11,6 +11,7 @@ syntax: glob
 
 # Temp files used by vim
 .*.swp
+tags
 
 # XCode
 *.xcworkspace*
@@ -59,3 +60,14 @@ mac/plugin_openssl.dylib
 
 win32/Debug
 win32/Release
+
+plugin-openssl-android.tgz
+plugin-openssl-iphone-sim.tgz
+plugin-openssl-iphone.tgz
+plugin-openssl-osx.tgz
+plugin-openssl-tvos-sim.tgz
+plugin-openssl-tvos.tgz
+plugin-openssl-win32.zip
+
+tests/cert.pem
+tests/key.pem

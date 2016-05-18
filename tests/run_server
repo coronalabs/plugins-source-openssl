@@ -1,0 +1,22 @@
+#!/bin/bash
+
+RUNDIR=$(dirname "$0")
+KEYFILE="$RUNDIR/key.pem"
+CERTFILE="$RUNDIR/cert.pem"
+
+if [ ! -f "$KEYFILE" -o ! -f "$CERTFILE" ]
+then
+	echo "Generating key and cert ..."
+	openssl req -x509 -newkey rsa:2048 -keyout "$KEYFILE" -out "$CERTFILE" -days 365 -nodes
+fi
+
+PORT=64001
+
+openssl version
+
+echo "Running server on 127.0.0.1:$PORT ..."
+
+openssl s_server \
+      -key "$KEYFILE" \
+      -cert "$CERTFILE" \
+      -accept $PORT -www

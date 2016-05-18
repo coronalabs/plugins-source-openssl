@@ -10,8 +10,6 @@
 
 #include "CoronaMacros.h"
 #include "CoronaLog.h"
-#include <stdarg.h>
-
 // ----------------------------------------------------------------------------
 
 #ifdef __cplusplus
@@ -118,16 +116,31 @@ CORONA_API int CoronaLuaDoFile( lua_State *L, const char* file, int narg, int cl
 
 CORONA_API int CoronaLuaPushModule( lua_State *L, const char *name ) CORONA_PUBLIC_SUFFIX;
 
-CORONA_API void CoronaLuaWarning( lua_State *L, const char *fmt, ... ) CORONA_PUBLIC_SUFFIX;
+#if defined( Rtt_MAC_ENV )
+CORONA_API void CoronaLuaLog( lua_State *L, const char *fmt, ... ) __attribute__ ((format (printf, 2, 3))) CORONA_PUBLIC_SUFFIX;
+CORONA_API void CoronaLuaLogPrefix( lua_State *L, const char *prefix, const char *fmt, ... ) __attribute__ ((format (printf, 3, 4))) CORONA_PUBLIC_SUFFIX;
+CORONA_API void CoronaLuaWarning( lua_State *L, const char *format, ... ) __attribute__ ((format (printf, 2, 3))) CORONA_PUBLIC_SUFFIX;
+CORONA_API void CoronaLuaError( lua_State *L, const char *format, ... ) __attribute__ ((format (printf, 2, 3)))  CORONA_PUBLIC_SUFFIX;
+#elif defined( Rtt_WIN_ENV )
+CORONA_API void CoronaLuaLog(lua_State *L, _Printf_format_string_ const char *fmt, ...) CORONA_PUBLIC_SUFFIX;
+CORONA_API void CoronaLuaLogPrefix(lua_State *L, _Printf_format_string_ const char *prefix, const char *fmt, ...) CORONA_PUBLIC_SUFFIX;
+CORONA_API void CoronaLuaWarning(lua_State *L, _Printf_format_string_ const char *format, ...) CORONA_PUBLIC_SUFFIX;
+CORONA_API void CoronaLuaError(lua_State *L, _Printf_format_string_ const char *format, ...) CORONA_PUBLIC_SUFFIX;
+#else
+CORONA_API void CoronaLuaLog(lua_State *L, const char *fmt, ...) CORONA_PUBLIC_SUFFIX;
+CORONA_API void CoronaLuaLogPrefix(lua_State *L, const char *prefix, const char *fmt, ...) CORONA_PUBLIC_SUFFIX;
+CORONA_API void CoronaLuaWarning(lua_State *L, const char *format, ...) CORONA_PUBLIC_SUFFIX;
+CORONA_API void CoronaLuaError(lua_State *L, const char *format, ...) CORONA_PUBLIC_SUFFIX;
+#endif // Rtt_MAC_ENV
 
-CORONA_API void CoronaLuaWarningV( lua_State *L, const char *fmt, va_list arguments ) CORONA_PUBLIC_SUFFIX;
+CORONA_API void CoronaLuaLogV(lua_State *L, const char *fmt, va_list arguments) CORONA_PUBLIC_SUFFIX;
 
-CORONA_API void CoronaLuaError( lua_State *L, const char *fmt, ... ) CORONA_PUBLIC_SUFFIX;
+CORONA_API void CoronaLuaLogPrefixV(lua_State *L, const char *prefix, const char *fmt, va_list arguments);
 
-CORONA_API void CoronaLuaErrorV( lua_State *L, const char *fmt, va_list arguments ) CORONA_PUBLIC_SUFFIX;
+#define CORONA_LUA_LOG_WARNING(L, format, ...)	CoronaLuaLogPrefix( (L), "WARNING: ", format "\n", ## __VA_ARGS__ )
+#define CORONA_LUA_LOG_ERROR(L, format, ...)	CoronaLuaLogPrefix( (L), "ERROR: ", format "\n", ## __VA_ARGS__ )
 
 CORONA_API int CoronaLuaPropertyToJSON(lua_State *L, int idx, const char *key, char *buf, int bufLen, int pos);
-
 
 // C++ Wrapper
 // ----------------------------------------------------------------------------

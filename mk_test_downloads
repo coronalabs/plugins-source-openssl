@@ -1,0 +1,74 @@
+#!/bin/bash
+#
+# mk_test_downloads
+#
+# Generate archives suitable for putting on server to test plugin changes
+#
+# Use a plugin table like this to test:
+#
+#  	["plugin.openssl"] = { publisherId = "com.coronalabs", supportedPlatforms = {
+#  	  android =        { url = 'https://dlserv.com/s/tr1uvqp/plugin-openssl-android.tgz' },
+#  	  iphone =         { url = 'https://dlserv.com/s/fcgw1ax/plugin-openssl-iphone.tgz' },
+#  	  ["iphone-sim"] = { url='https://dlserv.com/s/0fsiavx/plugin-openssl-iphone-sim.tgz' },
+#  	  -- osx =         { url = 'https://dlserv.com/s/ibgbse7/plugin-openssl-osx.tgz' },
+#  	  ["tvos-simulator"] =   { url='https://dlserv.com/s/ae3syxu/plugin-openssl-tvos-sim.tgz' },
+#  	  tvos =           { url = 'https://dlserv.com/s/4sqcd0z/plugin-openssl-tvos.tgz' },
+#  	  appletvsimulator =   { url='https://dlserv.com/s/ae3syxu/plugin-openssl-tvos-sim.tgz' },
+#  	  appletv =           { url = 'https://dlserv.com/s/4sqcd0z/plugin-openssl-tvos.tgz' },
+#  
+#  		},
+#	},
+
+if [ ! -f android/libs/armeabi-v7a/libplugin.openssl.so ]
+then
+	echo "Building plugin ..."
+	./build.sh
+fi
+
+P=$(pwd)
+
+echo "Android ..."
+cd android/libs/armeabi-v7a/ || exit
+cp ../../metadata.lua .
+tar cvzf "$P"/plugin-openssl-android.tgz libplugin.openssl.so metadata.lua
+cd "$P" || exit
+
+echo "iOS ..."
+cd ios/build/Release-iphoneos || exit
+cp ../../metadata.lua .
+tar cvzf "$P"/plugin-openssl-iphone.tgz libplugin.openssl.a metadata.lua
+echo "iOS Simulator ..."
+cd ../Release-iphonesimulator || exit
+cp ../../metadata.lua .
+tar cvzf "$P"/plugin-openssl-iphone-sim.tgz libplugin.openssl.a metadata.lua
+cd "$P" || exit
+
+echo "OS X ..."
+cd osx/build/Release || exit
+cp ../../../metadata.json .
+tar cvzf "$P"/plugin-openssl-osx.tgz plugin_openssl.dylib metadata.json
+cd "$P" || exit
+
+echo "tvOS ..."
+cd tvos/build/Release-appletvos || exit
+cp ../../metadata.lua .
+tar cvzf "$P"/plugin-openssl-tvos.tgz Corona_plugin_openssl.framework metadata.lua
+echo "tvOS Simulator ..."
+cd ../Release-appletvsimulator || exit
+cp ../../metadata.lua .
+tar cvzf "$P"/plugin-openssl-tvos-sim.tgz Corona_plugin_openssl.framework metadata.lua
+cd "$P" || exit
+
+echo "Windows ..."
+if [ -f win32/Release/plugin_openssl.dll ]
+then
+	cd win32/Release || exit
+	cp ../../metadata.json .
+	zip "$P"/plugin-openssl-win32.zip plugin_openssl.dll metadata.json
+	cd "$P" || exit
+else
+	echo "Warning: plugin not built for Windows"
+fi
+
+echo
+ls plugin-openssl-*

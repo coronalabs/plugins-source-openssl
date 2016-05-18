@@ -22,28 +22,6 @@
 ** ===================================================================
 */
 
-
-/*
-   Rtt platform-specific defines
-
-   LUA_FLATTEN_DIR
-   This is used for platforms that place all resources in a
-   flat directory.  Normally, Lua replaces "." with LUA_DIRSEP. 
-   In a flat directory, we preserve the "." and include the directory
-   hierarchy as part of the name of the file.  For example, for
-   "socket.core", Lua would normally look for "./socket/core.lua",
-   but with flat dirs, it will look for "./socket.core.lua"
-   
-   This is also used to support Lua files in subdirectories where
-   the simulator does do the above replacement but on device, paths
-   are flattened inside the resource.car so we do not replace there.
-*/
-#if defined( Rtt_IPHONE_ENV ) || defined( Rtt_ANDROID_ENV )
-	#if !defined( LUA_FLATTEN_DIR )
-		#define LUA_FLATTEN_DIR
-	#endif
-#endif
-
 /*
 @@ LUA_ANSI controls the use of non-ansi features.
 ** CHANGE it (define it) if you want Lua to avoid the use of any

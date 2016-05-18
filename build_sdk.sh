@@ -13,7 +13,7 @@ PRODUCT=sdk
 # Verify parameters.
 if [ $# -ne 2 ]
 then
-	echo Not enough parameters provided to: ${0}
+	echo "Usage: $0 <BUILD_DIR> <PLUGIN_NAME>"
 	exit 1
 fi
 
@@ -40,6 +40,8 @@ fi
 OUTPUT_PLUGINS_DIR=$OUTPUT_DIR/plugins
 OUTPUT_DIR_IOS=$OUTPUT_PLUGINS_DIR/iphone
 OUTPUT_DIR_IOS_SIM=$OUTPUT_PLUGINS_DIR/iphone-sim
+OUTPUT_DIR_TVOS=$OUTPUT_PLUGINS_DIR/tvos
+OUTPUT_DIR_TVOS_SIM=$OUTPUT_PLUGINS_DIR/tvos-sim
 OUTPUT_DIR_MAC=$OUTPUT_PLUGINS_DIR/mac-sim
 OUTPUT_DIR_ANDROID=$OUTPUT_PLUGINS_DIR/android
 OUTPUT_DIR_WIN32=$OUTPUT_PLUGINS_DIR/win32-sim
@@ -54,6 +56,8 @@ OUTPUT_DIR_SAMPLES=$OUTPUT_DIR/samples
 mkdir "$OUTPUT_DIR"
 mkdir -p "$OUTPUT_DIR_IOS"
 mkdir -p "$OUTPUT_DIR_IOS_SIM"
+mkdir -p "$OUTPUT_DIR_TVOS"
+mkdir -p "$OUTPUT_DIR_TVOS_SIM"
 mkdir -p "$OUTPUT_DIR_MAC"
 mkdir -p "$OUTPUT_DIR_ANDROID"
 mkdir -p "$OUTPUT_DIR_WIN32"
@@ -86,8 +90,30 @@ cd "$path/ios"
 cd -
 
 echo "------------------------------------------------------------------------"
-echo "[mac]"
-cd "$path/mac"
+echo "[tvos]"
+cd "$path/tvos"
+	./build.sh "$OUTPUT_DIR_TVOS" Corona_plugin_openssl
+
+	cp -v metadata.lua "$OUTPUT_DIR_TVOS"
+
+	cp -rv "$OUTPUT_DIR_TVOS/" "$OUTPUT_DIR_TVOS_SIM"
+
+	# Remove i386 from TVos build
+	find "$OUTPUT_DIR_TVOS" -name \*.a | xargs -n 1 -I % lipo -remove i386 % -output %
+
+	# Remove x86_64 from TVos build
+	find "$OUTPUT_DIR_TVOS" -name \*.a | xargs -n 1 -I % lipo -remove x86_64 % -output %
+
+	# Remove armv7 from TVos-sim build
+	find "$OUTPUT_DIR_TVOS_SIM" -name \*.a | xargs -n 1 -I % lipo -remove armv7 % -output %
+
+	# Remove arm64 from TVos-sim build
+	find "$OUTPUT_DIR_TVOS_SIM" -name \*.a | xargs -n 1 -I % lipo -remove arm64 % -output %
+cd -
+
+echo "------------------------------------------------------------------------"
+echo "[osx]"
+cd "$path/osx"
 	./build.sh "$OUTPUT_DIR_MAC" $PLUGIN_NAME
 cd -
 
@@ -106,22 +132,26 @@ cd "$path"
 	cp -v sdk-openssl/win32/bin/*.dll "$OUTPUT_DIR_WIN32"
 cd -
 
-echo "------------------------------------------------------------------------"
-echo "[docs]"
-cp -vrf "$path/docs" "$OUTPUT_DIR"
+if [ -d "$path/docs" ]
+then
+	echo "------------------------------------------------------------------------"
+	echo "[docs]"
+	cp -Rfv "$path/docs" "$OUTPUT_DIR"
+fi
 
 echo "------------------------------------------------------------------------"
 echo "[samples]"
-cp -vrf "$path/Corona/" "$OUTPUT_DIR_SAMPLES"
+cp -Rfv "$path/Corona/" "$OUTPUT_DIR_SAMPLES"
 
 echo "------------------------------------------------------------------------"
 echo "[metadata.json]"
-cp -vrf "$path/metadata.json" "$OUTPUT_DIR"
+cp -Rfv "$path/metadata.json" "$OUTPUT_DIR"
 
 echo "------------------------------------------------------------------------"
 echo "Generating plugin zip"
 ZIP_FILE=$BUILD_DIR/${PRODUCT}-${PLUGIN_NAME}.zip
 cd "$OUTPUT_DIR"
+	rm -f "$ZIP_FILE"
 	zip -rv "$ZIP_FILE" *
 cd -
 
