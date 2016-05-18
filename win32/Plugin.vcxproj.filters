@@ -126,6 +126,8 @@
     <ClCompile Include="..\sdk-luasocket\src\wsocket.c">
       <Filter>sdk-luasocket</Filter>
     </ClCompile>
+    <ClCompile Include="..\sdk-luasocket\src\compat.c" />
+    <ClCompile Include="..\sdk-luasocket\src\x509.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\sdk-lua-openssl\src\corona_auxiliar.h">
@@ -416,5 +418,6 @@
     <ClInclude Include="..\sdk-openssl\win32\include\openssl\x509v3.h">
       <Filter>sdk-openssl</Filter>
     </ClInclude>
+    <ClInclude Include="..\sdk-luasocket\src\compat.h" />
   </ItemGroup>
 </Project>
