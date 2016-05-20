@@ -1,6 +1,11 @@
--- Copyright (c) 2014 Corona Labs Inc. All Rights Reserved.
+--------------------------------------------------------------------------------
+-- Sample code is MIT licensed, see https://coronalabs.com/links/code/license
+-- Copyright (C) 2016 Corona Labs Inc. All Rights Reserved.
+--------------------------------------------------------------------------------
 
---Runtime:setCheckGlobals(true)
+--
+-- Demonstrates simple but secure AES256 encryption
+--
 
 local json = require "json"
 local openssl = require( "plugin.openssl" )
@@ -38,11 +43,8 @@ Runtime._G.print = function(...)
 end
 
 ---------------------------------------------------------------------------
-
  
 local openssl = require( "plugin.openssl" )
-local plugin_luasec_ssl = require( "plugin_luasec_ssl" )
-local plugin_luasec_https = require('plugin_luasec_https')
 
 local aes256cbc = openssl.get_cipher( "aes-256-cbc" )
 
@@ -50,9 +52,6 @@ local lua_openssl_version, lua_version, openssl_version = openssl.version()
 print( "lua-openssl version: " .. lua_openssl_version, lua_version, openssl_version )
 
 print("openssl:" ,json.prettify(openssl))
-print("plugin_luasec_ssl:" ,json.prettify(plugin_luasec_ssl))
-
-print("plugin_luasec_https:" ,json.prettify(plugin_luasec_https))
 
 local mime = require( "mime" )
  

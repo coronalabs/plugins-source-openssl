@@ -1,7 +1,8 @@
 --------------------------------------------------------------------------------
--- Sample code is MIT licensed, see http://www.coronalabs.com/links/code/license
--- Copyright (C) 2013 Corona Labs Inc. All Rights Reserved.
+-- Sample code is MIT licensed, see https://coronalabs.com/links/code/license
+-- Copyright (C) 2016 Corona Labs Inc. All Rights Reserved.
 --------------------------------------------------------------------------------
+
 --
 -- Demonstrates two ways to retrieve data from secure web servers 
 --
@@ -20,7 +21,6 @@ local plugin_luasec_ssl = require('plugin_luasec_ssl')
 lua_openssl_version, lua_version, openssl_version = openssl.version()
 print( "lua-openssl version: " .. lua_openssl_version, lua_version, openssl_version )
 
---------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
 local serverName = "coronalabs.com"
@@ -82,7 +82,10 @@ conn:close()
 
 print("")
 
+--------------------------------------------------------------------------------
+
 local plugin_luasec_https = require('plugin_luasec_https')
+local lfs = require('lfs')
 
 local url = "https://coronalabs.com/"
 local outfile = system.pathForFile('out.dat', system.TemporaryDirectory)
@@ -92,14 +95,12 @@ print("Requesting secure URL on HTTPS socket: " .. url)
 
 plugin_luasec_https.request({
 				url = "https://coronalabs.com/",
-				-- headers = { Host = "coronalabs.com" },
 				sink = ltn12.sink.file(outfilePtr),
 				protocol = "any"
 			})
 
 print("    received ".. lfs.attributes(outfile).size .." bytes")
 
---------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
 print("")
