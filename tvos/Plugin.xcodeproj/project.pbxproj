@@ -59,10 +59,10 @@
 		C214FC1E1CE3C27200AB383B /* xattrs.c in Sources */ = {isa = PBXBuildFile; fileRef = C214FC001CE3C27200AB383B /* xattrs.c */; };
 		C214FC1F1CE3C27200AB383B /* xexts.c in Sources */ = {isa = PBXBuildFile; fileRef = C214FC011CE3C27200AB383B /* xexts.c */; };
 		C214FC201CE3C27200AB383B /* xname.c in Sources */ = {isa = PBXBuildFile; fileRef = C214FC021CE3C27200AB383B /* xname.c */; };
-		C214FC231CE3C62100AB383B /* compat.c in Sources */ = {isa = PBXBuildFile; fileRef = C214FC211CE3C62100AB383B /* compat.c */; };
 		C214FC241CE3C62100AB383B /* compat.h in Headers */ = {isa = PBXBuildFile; fileRef = C214FC221CE3C62100AB383B /* compat.h */; };
 		C2F911FF1CE3C113004A5564 /* libcrypto-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2F911FD1CE3C113004A5564 /* libcrypto-tvOS.a */; };
 		C2F912001CE3C113004A5564 /* libssl-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2F911FE1CE3C113004A5564 /* libssl-tvOS.a */; };
+		F5CE5531216D4003006CC53D /* compat.c in Sources */ = {isa = PBXBuildFile; fileRef = F5CE5530216D4003006CC53D /* compat.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -93,12 +93,12 @@
 		A49EC1861BD779560093F529 /* Corona_plugin_openssl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Corona_plugin_openssl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A49EC18B1BD779560093F529 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Plugin/Info.plist; sourceTree = "<group>"; };
 		A49EC1AA1BD77C530093F529 /* CoronaCards.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoronaCards.framework; path = CoronaEnterprise/Corona/tvos/frameworks/CoronaCards.framework; sourceTree = "<group>"; };
-		C214FBD71CE3C22400AB383B /* context.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = context.c; path = "../../../core/main-tachyon-home/external/luasocket/src/context.c"; sourceTree = "<group>"; };
-		C214FBD81CE3C22400AB383B /* context.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = context.h; path = "../../../core/main-tachyon-home/external/luasocket/src/context.h"; sourceTree = "<group>"; };
-		C214FBD91CE3C22400AB383B /* ssl.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ssl.c; path = "../../../core/main-tachyon-home/external/luasocket/src/ssl.c"; sourceTree = "<group>"; };
-		C214FBDA1CE3C22400AB383B /* ssl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ssl.h; path = "../../../core/main-tachyon-home/external/luasocket/src/ssl.h"; sourceTree = "<group>"; };
-		C214FBDB1CE3C22400AB383B /* x509.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = x509.c; path = "../../../core/main-tachyon-home/external/luasocket/src/x509.c"; sourceTree = "<group>"; };
-		C214FBDC1CE3C22400AB383B /* x509.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = x509.h; path = "../../../core/main-tachyon-home/external/luasocket/src/x509.h"; sourceTree = "<group>"; };
+		C214FBD71CE3C22400AB383B /* context.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = context.c; sourceTree = "<group>"; };
+		C214FBD81CE3C22400AB383B /* context.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = context.h; sourceTree = "<group>"; };
+		C214FBD91CE3C22400AB383B /* ssl.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ssl.c; sourceTree = "<group>"; };
+		C214FBDA1CE3C22400AB383B /* ssl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ssl.h; sourceTree = "<group>"; };
+		C214FBDB1CE3C22400AB383B /* x509.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = x509.c; sourceTree = "<group>"; };
+		C214FBDC1CE3C22400AB383B /* x509.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x509.h; sourceTree = "<group>"; };
 		C214FBE51CE3C27200AB383B /* bio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = bio.c; path = "../sdk-lua-openssl/src/bio.c"; sourceTree = "<group>"; };
 		C214FBE61CE3C27200AB383B /* cipher.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = cipher.c; path = "../sdk-lua-openssl/src/cipher.c"; sourceTree = "<group>"; };
 		C214FBE71CE3C27200AB383B /* conf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = conf.c; path = "../sdk-lua-openssl/src/conf.c"; sourceTree = "<group>"; };
@@ -129,10 +129,10 @@
 		C214FC001CE3C27200AB383B /* xattrs.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = xattrs.c; path = "../sdk-lua-openssl/src/xattrs.c"; sourceTree = "<group>"; };
 		C214FC011CE3C27200AB383B /* xexts.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = xexts.c; path = "../sdk-lua-openssl/src/xexts.c"; sourceTree = "<group>"; };
 		C214FC021CE3C27200AB383B /* xname.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = xname.c; path = "../sdk-lua-openssl/src/xname.c"; sourceTree = "<group>"; };
-		C214FC211CE3C62100AB383B /* compat.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = compat.c; path = "../../../core/main-tachyon-home/external/luasocket/src/compat.c"; sourceTree = "<group>"; };
-		C214FC221CE3C62100AB383B /* compat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = compat.h; path = "../../../core/main-tachyon-home/external/luasocket/src/compat.h"; sourceTree = "<group>"; };
+		C214FC221CE3C62100AB383B /* compat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = compat.h; sourceTree = "<group>"; };
 		C2F911FD1CE3C113004A5564 /* libcrypto-tvOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libcrypto-tvOS.a"; path = "../sdk-openssl/apple/lib/libcrypto-tvOS.a"; sourceTree = "<group>"; };
 		C2F911FE1CE3C113004A5564 /* libssl-tvOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libssl-tvOS.a"; path = "../sdk-openssl/apple/lib/libssl-tvOS.a"; sourceTree = "<group>"; };
+		F5CE5530216D4003006CC53D /* compat.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = compat.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,7 +189,7 @@
 		C214FBE31CE3C22900AB383B /* sdk-luasocket */ = {
 			isa = PBXGroup;
 			children = (
-				C214FC211CE3C62100AB383B /* compat.c */,
+				F5CE5530216D4003006CC53D /* compat.c */,
 				C214FC221CE3C62100AB383B /* compat.h */,
 				C214FBD71CE3C22400AB383B /* context.c */,
 				C214FBD81CE3C22400AB383B /* context.h */,
@@ -199,6 +199,7 @@
 				C214FBDC1CE3C22400AB383B /* x509.h */,
 			);
 			name = "sdk-luasocket";
+			path = ../../../main/external/luasocket/src;
 			sourceTree = "<group>";
 		};
 		C214FBE41CE3C24600AB383B /* sdk-lua-openssl */ = {
@@ -368,13 +369,13 @@
 				C214FC181CE3C27200AB383B /* plugin_luasec_options.c in Sources */,
 				C214FC0F1CE3C27200AB383B /* ocsp.c in Sources */,
 				C214FC041CE3C27200AB383B /* cipher.c in Sources */,
-				C214FC231CE3C62100AB383B /* compat.c in Sources */,
 				C214FBE11CE3C22400AB383B /* x509.c in Sources */,
 				C214FC151CE3C27200AB383B /* pkcs12.c in Sources */,
 				C214FC131CE3C27200AB383B /* ots.c in Sources */,
 				C214FC091CE3C27200AB383B /* csr.c in Sources */,
 				C214FC061CE3C27200AB383B /* corona_auxiliar.c in Sources */,
 				C214FC081CE3C27200AB383B /* crl.c in Sources */,
+				F5CE5531216D4003006CC53D /* compat.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
