@@ -199,7 +199,7 @@
 				C214FBDC1CE3C22400AB383B /* x509.h */,
 			);
 			name = "sdk-luasocket";
-			path = ../../../main/external/luasocket/src;
+			path = "../sdk-luasocket/src";
 			sourceTree = "<group>";
 		};
 		C214FBE41CE3C24600AB383B /* sdk-lua-openssl */ = {
