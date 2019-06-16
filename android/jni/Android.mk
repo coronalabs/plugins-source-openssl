@@ -20,7 +20,7 @@ SDK_OPENSSL := $(PLUGIN_DIR)/sdk-openssl/android/libs
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := libcrypto
-LOCAL_SRC_FILES := $(SDK_OPENSSL)/lib/libcrypto.a
+LOCAL_SRC_FILES := $(SDK_OPENSSL)/../multiarch/$(TARGET_ARCH_ABI)/libcrypto.a
 LOCAL_EXPORT_C_INCLUDES := $(SDK_OPENSSL)/include
 include $(PREBUILT_STATIC_LIBRARY)
 
@@ -28,7 +28,7 @@ include $(PREBUILT_STATIC_LIBRARY)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := libssl
-LOCAL_SRC_FILES := $(SDK_OPENSSL)/lib/libssl.a
+LOCAL_SRC_FILES := $(SDK_OPENSSL)/../multiarch/$(TARGET_ARCH_ABI)/libssl.a
 LOCAL_EXPORT_C_INCLUDES := $(SDK_OPENSSL)/include
 include $(PREBUILT_STATIC_LIBRARY)
 
@@ -36,7 +36,7 @@ include $(PREBUILT_STATIC_LIBRARY)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := liblua
-LOCAL_SRC_FILES := ../liblua.so
+LOCAL_SRC_FILES := ../corona-libs/jni/$(TARGET_ARCH_ABI)/liblua.so
 #LOCAL_EXPORT_C_INCLUDES := $(LUA_API_DIR)
 include $(PREBUILT_SHARED_LIBRARY)
 
@@ -44,7 +44,7 @@ include $(PREBUILT_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := libcorona
-LOCAL_SRC_FILES := ../libcorona.so
+LOCAL_SRC_FILES := ../corona-libs/jni/$(TARGET_ARCH_ABI)/libcorona.so
 #LOCAL_EXPORT_C_INCLUDES := $(CORONA_API_DIR)
 include $(PREBUILT_SHARED_LIBRARY)
 
