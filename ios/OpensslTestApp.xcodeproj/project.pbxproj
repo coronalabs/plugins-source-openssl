@@ -56,6 +56,10 @@
 		A489DE2D16854301007FB757 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A489DE2A16854301007FB757 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		A4E2537F166AE3DC00DCDC2C /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4E2537E166AE3DC00DCDC2C /* Twitter.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		A4E253E5166DE7E000DCDC2C /* libplugin.openssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A4E253E2166DE7C800DCDC2C /* libplugin.openssl.a */; };
+		F5B09CDD22C3CBE900C77049 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5B09CDC22C3CBE800C77049 /* CoreText.framework */; };
+		F5B09CDF22C3CBEF00C77049 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5B09CDE22C3CBEF00C77049 /* AssetsLibrary.framework */; };
+		F5B09CE222C3CBF300C77049 /* PhotosUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5B09CE022C3CBF300C77049 /* PhotosUI.framework */; };
+		F5B09CE322C3CBF300C77049 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5B09CE122C3CBF300C77049 /* Photos.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +133,10 @@
 		A489DE2A16854301007FB757 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		A4E2537E166AE3DC00DCDC2C /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		A4E253DA166DE7C800DCDC2C /* Plugin.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Plugin.xcodeproj; sourceTree = "<group>"; };
+		F5B09CDC22C3CBE800C77049 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		F5B09CDE22C3CBEF00C77049 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		F5B09CE022C3CBF300C77049 /* PhotosUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotosUI.framework; path = System/Library/Frameworks/PhotosUI.framework; sourceTree = SDKROOT; };
+		F5B09CE122C3CBF300C77049 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +144,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5B09CE222C3CBF300C77049 /* PhotosUI.framework in Frameworks */,
+				F5B09CE322C3CBF300C77049 /* Photos.framework in Frameworks */,
+				F5B09CDF22C3CBEF00C77049 /* AssetsLibrary.framework in Frameworks */,
+				F5B09CDD22C3CBE900C77049 /* CoreText.framework in Frameworks */,
 				504B0D451A2FD1BA004CC7DE /* CoreVideo.framework in Frameworks */,
 				504B0D431A2FD1AF004CC7DE /* GLKit.framework in Frameworks */,
 				A489DE2B16854301007FB757 /* Accounts.framework in Frameworks */,
@@ -233,6 +245,10 @@
 		A484111C15114F700074BD57 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F5B09CE122C3CBF300C77049 /* Photos.framework */,
+				F5B09CE022C3CBF300C77049 /* PhotosUI.framework */,
+				F5B09CDE22C3CBEF00C77049 /* AssetsLibrary.framework */,
+				F5B09CDC22C3CBE800C77049 /* CoreText.framework */,
 				A489DE2816854301007FB757 /* Accounts.framework */,
 				A484116315128D5C0074BD57 /* AddressBook.framework */,
 				A484116415128D5C0074BD57 /* AddressBookUI.framework */,
@@ -344,6 +360,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = A484110E15114F700074BD57;
@@ -452,7 +469,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Ensures that next attempt to build actually rebuilds the executable so it can be (re)app_sign(ed)\necho \"Updating modification time of $PROJECT_DIR/main.mm to trigger relink of $BUILT_PRODUCTS_DIR/$EXECUTABLE_PATH\"\necho \"We need to do this b/c app_sign can only sign an unsigned executable.\"\ntouch \"$PROJECT_DIR/main.mm\"";
+			shellScript = "# Ensures that next attempt to build actually rebuilds the executable so it can be (re)app_sign(ed)\necho \"Updating modification time of $PROJECT_DIR/main.mm to trigger relink of $BUILT_PRODUCTS_DIR/$EXECUTABLE_PATH\"\necho \"We need to do this b/c app_sign can only sign an unsigned executable.\"\ntouch \"$PROJECT_DIR/main.mm\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -546,6 +563,7 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				INFOPLIST_FILE = "App-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/CoronaEnterprise/Corona/ios/lib\"",
@@ -573,6 +591,7 @@
 				GCC_PREFIX_HEADER = Prefix.pch;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				INFOPLIST_FILE = "App-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/CoronaEnterprise/Corona/ios/lib\"",

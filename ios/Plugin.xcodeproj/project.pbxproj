@@ -36,6 +36,8 @@
 		505018551762D0DB00834415 /* plugin_luasec_ssl.c in Sources */ = {isa = PBXBuildFile; fileRef = 505018531762D0DB00834415 /* plugin_luasec_ssl.c */; };
 		50951A051766A2C900A55651 /* context.c in Sources */ = {isa = PBXBuildFile; fileRef = 50951A011766A2C900A55651 /* context.c */; };
 		50951A061766A2C900A55651 /* ssl.c in Sources */ = {isa = PBXBuildFile; fileRef = 50951A031766A2C900A55651 /* ssl.c */; };
+		F52865C522C3EF63006B4A88 /* ec.c in Sources */ = {isa = PBXBuildFile; fileRef = F52865C422C3EF63006B4A88 /* ec.c */; };
+		F52865C722C3EF9A006B4A88 /* config.c in Sources */ = {isa = PBXBuildFile; fileRef = F52865C622C3EF9A006B4A88 /* config.c */; };
 		F864FA3E19D60B48004CDC62 /* functions.c in Sources */ = {isa = PBXBuildFile; fileRef = F864FA3C19D60B48004CDC62 /* functions.c */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +92,10 @@
 		50951A031766A2C900A55651 /* ssl.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ssl.c; path = "../sdk-luasocket/src/ssl.c"; sourceTree = "<group>"; };
 		50951A041766A2C900A55651 /* ssl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ssl.h; path = "../sdk-luasocket/src/ssl.h"; sourceTree = "<group>"; };
 		A4E253B6166D6FB300DCDC2C /* libplugin.openssl.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libplugin.openssl.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F52865C322C3EF63006B4A88 /* ec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ec.h; path = "../sdk-luasocket/src/ec.h"; sourceTree = "<group>"; };
+		F52865C422C3EF63006B4A88 /* ec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ec.c; path = "../sdk-luasocket/src/ec.c"; sourceTree = "<group>"; };
+		F52865C622C3EF9A006B4A88 /* config.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = config.c; path = "../sdk-luasocket/src/config.c"; sourceTree = "<group>"; };
+		F52865C822C3F057006B4A88 /* config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = config.h; path = "../sdk-luasocket/src/config.h"; sourceTree = "<group>"; };
 		F864FA3C19D60B48004CDC62 /* functions.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = functions.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -154,8 +160,12 @@
 		50951A001766A26900A55651 /* luasec */ = {
 			isa = PBXGroup;
 			children = (
+				F52865C822C3F057006B4A88 /* config.h */,
+				F52865C622C3EF9A006B4A88 /* config.c */,
 				50951A011766A2C900A55651 /* context.c */,
 				50951A021766A2C900A55651 /* context.h */,
+				F52865C422C3EF63006B4A88 /* ec.c */,
+				F52865C322C3EF63006B4A88 /* ec.h */,
 				50951A031766A2C900A55651 /* ssl.c */,
 				50951A041766A2C900A55651 /* ssl.h */,
 				4CB8893F1C61476F00CB6DF2 /* x509.c */,
@@ -215,6 +225,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = A484110E15114F700074BD57;
@@ -255,6 +266,7 @@
 				50362DDD17209608009972A3 /* crl.c in Sources */,
 				50362DDE17209608009972A3 /* csr.c in Sources */,
 				50362DDF17209608009972A3 /* digest.c in Sources */,
+				F52865C522C3EF63006B4A88 /* ec.c in Sources */,
 				50362DE017209608009972A3 /* engine.c in Sources */,
 				F864FA3E19D60B48004CDC62 /* functions.c in Sources */,
 				50362DE117209608009972A3 /* lbn.c in Sources */,
@@ -266,6 +278,7 @@
 				50362DE717209608009972A3 /* pkcs12.c in Sources */,
 				50362DE817209608009972A3 /* pkey.c in Sources */,
 				50362DE917209608009972A3 /* ssl.c in Sources */,
+				F52865C722C3EF9A006B4A88 /* config.c in Sources */,
 				50362DEA17209608009972A3 /* x509.c in Sources */,
 				50362DEB17209608009972A3 /* xattrs.c in Sources */,
 				50362DEC17209608009972A3 /* xexts.c in Sources */,

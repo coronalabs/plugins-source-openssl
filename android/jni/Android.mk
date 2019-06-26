@@ -81,6 +81,8 @@ LOCAL_SRC_FILES := \
 	$(SDK_LUASOCKET)/unix.c \
 	$(SDK_LUASOCKET)/usocket.c \
 	$(SDK_LUASOCKET)/x509.c \
+	$(SDK_LUASOCKET)/ec.c \
+	$(SDK_LUASOCKET)/config.c \
 	\
 	$(SDK_LUA_OPENSSL)/bio.c \
 	$(SDK_LUA_OPENSSL)/cipher.c \

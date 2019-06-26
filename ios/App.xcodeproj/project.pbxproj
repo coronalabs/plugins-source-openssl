@@ -46,6 +46,10 @@
 		A4C2449A1683FA5300C395D1 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4C244971683FA5300C395D1 /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		A4C2449C1683FA5300C395D1 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4C244991683FA5300C395D1 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		A4E2537F166AE3DC00DCDC2C /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4E2537E166AE3DC00DCDC2C /* Twitter.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		F5B09CD322C3CB5B00C77049 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5B09CD222C3CB5B00C77049 /* CoreText.framework */; };
+		F5B09CD522C3CB6500C77049 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5B09CD422C3CB6500C77049 /* AssetsLibrary.framework */; };
+		F5B09CD822C3CB6F00C77049 /* PhotosUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5B09CD622C3CB6F00C77049 /* PhotosUI.framework */; };
+		F5B09CD922C3CB6F00C77049 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5B09CD722C3CB6F00C77049 /* Photos.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +107,10 @@
 		A4C244971683FA5300C395D1 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		A4C244991683FA5300C395D1 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		A4E2537E166AE3DC00DCDC2C /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		F5B09CD222C3CB5B00C77049 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		F5B09CD422C3CB6500C77049 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		F5B09CD622C3CB6F00C77049 /* PhotosUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotosUI.framework; path = System/Library/Frameworks/PhotosUI.framework; sourceTree = SDKROOT; };
+		F5B09CD722C3CB6F00C77049 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +118,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5B09CD822C3CB6F00C77049 /* PhotosUI.framework in Frameworks */,
+				F5B09CD922C3CB6F00C77049 /* Photos.framework in Frameworks */,
+				F5B09CD522C3CB6500C77049 /* AssetsLibrary.framework in Frameworks */,
+				F5B09CD322C3CB5B00C77049 /* CoreText.framework in Frameworks */,
 				A46885F418068C2900381941 /* CoreVideo.framework in Frameworks */,
 				A46885F218068C2200381941 /* GLKit.framework in Frameworks */,
 				A4C2449A1683FA5300C395D1 /* Accounts.framework in Frameworks */,
@@ -205,6 +217,10 @@
 		A484111C15114F700074BD57 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F5B09CD722C3CB6F00C77049 /* Photos.framework */,
+				F5B09CD622C3CB6F00C77049 /* PhotosUI.framework */,
+				F5B09CD422C3CB6500C77049 /* AssetsLibrary.framework */,
+				F5B09CD222C3CB5B00C77049 /* CoreText.framework */,
 				A46885F318068C2900381941 /* CoreVideo.framework */,
 				A4C244971683FA5300C395D1 /* Accounts.framework */,
 				A4C244991683FA5300C395D1 /* Social.framework */,
@@ -302,6 +318,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = A484110E15114F700074BD57;
@@ -489,6 +506,7 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				INFOPLIST_FILE = "App-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/CoronaEnterprise/Corona/ios/lib\"",
@@ -517,6 +535,7 @@
 				GCC_PREFIX_HEADER = Prefix.pch;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				INFOPLIST_FILE = "App-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/CoronaEnterprise/Corona/ios/lib\"",
