@@ -12,16 +12,38 @@ local greeting = display.newText("OpenSSL tests - see console for results", disp
 print( "OpenSSL sample start" )
 
 Runtime:setCheckGlobals( true )
-local crypto = require "crypto"
 
-local openssl = require('plugin.openssl')
-local util = require('util')
+local is_opensslv3 = true
+local good, openssl = pcall( require, "plugin.opensslv3" )
 
-lua_openssl_version, lua_version, openssl_version = openssl.version()
+local function check_error()
+	if openssl.error then
+		local reason, lib_reason, code = openssl.error()
+		if reason then
+			print( "code", tostring(code) )
+			print( "reason", tostring(reason) )
+			print( "lib_reason", tostring(lib_reason) )
+		end
+	end
+end
+
+if good == false then
+	is_opensslv3 = false
+	print( "WARNING: v3 not found, pcall require message is:", tostring( openssl ) )
+	print( "Now require plugin.openssl..." )
+	openssl = require( "plugin.openssl" )
+end
+
+check_error()
+
+local lua_openssl_version, lua_version, openssl_version = openssl.version()
 print( "lua-openssl version: " .. lua_openssl_version, lua_version, openssl_version )
+greeting.text = openssl_version
+
+check_error()
 
 --dump a table 
-function dump(t,i)
+local function dump(t,i)
         for k,v in pairs(t) do
                 if(type(v)=='table') then
                         print( string.rep('\t',i),k..'={')
@@ -33,13 +55,15 @@ function dump(t,i)
         end
 end
 
-function HexDumpString(str,spacer)
+local function HexDumpString(str,spacer)
 	return ( string.gsub(str,"(.)", function (c)
 										return string.format("%02X%s",string.byte(c), spacer or "")
 									end) )
 end
 
-if false then
+local testcases = {}
+function testcases.test_bn()
+
 	-- test bn ("BIGNUM") library
 	local bn = openssl.bn
 	------------------------------------------------------------------------------
@@ -95,11 +119,11 @@ if false then
 	t=bn.number(2)
 	x=bn.powmod(t,e,m)
 	y=bn.powmod(x,d,m)
-		assert(t==y)
+	assert(t==y)
 
 end
 
-if false then
+function testcases.test_csr()
 
 	local raw_data =
 [[
@@ -116,7 +140,7 @@ pM4KW8DPKCZ16zylyzRbVKbQJ/sjcCPqd55M3THg2gRnxywalw==
 -----END CERTIFICATE----- 
 ]]
 
-	local x = openssl.x509_read(raw_data)
+	local x = (is_opensslv3 and openssl.x509.read or openssl.x509_read)( raw_data )
 	dump(x:parse(),0)
 
 	local csr_data =
@@ -135,21 +159,19 @@ wSpxg0VN6+i6u9C9n4xwCe1VyteOC2In0LbxMAGL3rVFm9yDFRU3LDy3EWG6DIg/
 -----END CERTIFICATE REQUEST----- 
 ]]
 
-	local x509 = openssl.csr_read(csr_data)
+	local x509 = (is_opensslv3 and openssl.x509.req.read or openssl.csr_read)( csr_data )
 	dump(x509:parse(),0)
 
 end
 
-if false then
-
-	length = 64
-	print(openssl.random_bytes(length))
-
+function testcases.test_random()
+	local bytes = 64
+	print( (is_opensslv3 and openssl.random or openssl.random_bytes)( bytes ) )
 end
 
-if false then
+function testcases.test_sha1_empty()
 
-	local sha1 = openssl.get_digest('sha1')
+	local sha1 = (is_opensslv3 and openssl.digest.get or openssl.get_digest)( 'sha1' )
 
 	local d = sha1:digest('')
 
@@ -161,9 +183,9 @@ if false then
 
 end
 
-if false then
+function testcases.test_md5_empty()
 
-	local md5 = openssl.get_digest('md5')
+	local md5 = (is_opensslv3 and openssl.digest.get or openssl.get_digest)( 'md5' )
 
 	local d = md5:digest('')
 
@@ -175,71 +197,131 @@ if false then
 
 end
 
-if true then
+function testcases.test_x509()
+
+	--[[
+		1. Generate kaypair
+	]]
 
 	-- create a rsa private key
-	local pkey = openssl.pkey_new('rsa' ,1024, 0x10001)
-	print('is_private:',pkey:is_private())
-    if (pkey:is_private()) then
-        --dump public key
-        local pub = pkey:export(
-                true,  --only public
-                false  --not raw format
-                )
-        print("Encoded public key is:")
-        print(pub)
-        pub = openssl.pkey_read(pub)  
-        print("object public key is:",pub)
-    end
+	local pkey = (is_opensslv3 and openssl.pkey.new or openssl.pkey_new)( 'rsa', 1024, 0x10001 )
 
-	print(string.rep('-',78))
-	print(pkey:export())
-	print(string.rep('-',78))
+	-- DO NOT PRINT OUT PRIVATE KEY IN PRODUCTION
+	-- print pkey for debug
+	print( pkey:export() )
+	print( 'pkey is_private:', pkey:is_private() )
 
+	if ( pkey:is_private() ) then
+
+		-- export public key
+		local pubstr = nil
+		if is_opensslv3 then
+			local pub = pkey:get_public()
+			pubstr = pub:export(
+				"pem", -- ‘pem’ or ‘der’, default ‘pem’
+				false -- default false
+			)
+		else
+			pubstr = pkey:export(
+				true, -- only public
+				false -- not raw format
+			)
+		end
+
+		print( "Encoded public key is:" )
+		print( pubstr )
+
+		-- import public key
+		local pub_imported = (is_opensslv3 and openssl.pkey.read or openssl.pkey_read)( pubstr )
+		print( "imported public key is:", pub_imported )
+	end
+
+	-- print key information
+	print('pkey information:')
 	local t = pkey:parse()
 	dump(t,0)
 
 	print('pkey generate OK')
 	print(string.rep('-',78))
 
-	-- create a certificate
-	local args = {}
-	args.digest = 'sha1WithRSAEncryption'
+	--[[
+		2. Create CSR(Certificate Signing Request)
+	]]
 
-	local dn = {commonName='my_name_example', emailAddress='my_name_example@example.com'}
-
-	local csr = openssl.csr_new(pkey,dn,args)
-
-	t = csr:parse()
-	dump(t,0)
-
-	print('csr generate OK')
+	local csr
+	local digest_alg = "sha1WithRSAEncryption"
+	if is_opensslv3 then
+		local cadn = {
+			{CN = 'CA'},
+			{OU = "lua-openssl"},
+			{O = "Solar2D"},
+			{C = 'CN'}
+		  }
+		-- make x509_name
+		cadn = openssl.x509.name.new(cadn)
+		-- generate signed CSR
+		csr = openssl.x509.req.new(cadn, pkey, digest_alg)
+	else
+		local args = { digest = digest_alg }
+		local dn = { commonName='my_name_example', emailAddress='my_name_example@example.com' }
+		csr = openssl.csr_new( pkey, dn, args )
+	end
+	dump(csr:parse(), 0)
+	print('CSR generate OK')
 	print(string.rep('-',78))
 
+	--[[
+		3. Self-signed certificate
+	]]
+
 	-- make a self sign certificate
-	args = {}
-	args.digest = 'sha1WithRSAEncryption'
-	args.serialNumber = '1234567890abcdef' --hexencode big number
-	args.num_days = 365
-
-	local x509 = csr:sign(nil,pkey,args)
-	local t = x509:parse()
-	dump(t, 0);
-
+	local self_sign_cert
+	if is_opensslv3 then
+		self_sign_cert = csr:to_x509( pkey, 365, digest_alg )
+	else
+		local args = {
+			digest = digest_alg,
+			serialNumber = '1234567890abcdef', --hexencode big number
+			num_days = 365
+		}
+		self_sign_cert = csr:sign( nil, pkey, args )
+	end
+	dump(self_sign_cert:parse(), 0);
 	print('self signed certificate generate OK')
 	print(string.rep('-',78))
 
+	--[[
+		4. Sign and verify
+	]]
+
 	-- sign something.
-	local signed_data = openssl.sign('I love lua', pkey , 'sha1')
+	local signed_data
+	if is_opensslv3 then
+		signed_data = pkey:sign('I love lua', 'sha1')
+	else
+		signed_data = openssl.sign('I love lua', pkey, 'sha1')
+	end
 	print('#signed_data:', #signed_data)
 
-	local sha1 = openssl.get_digest('sha1')
+	-- get verify method
+	local sha1 = (is_opensslv3 and openssl.digest.get or openssl.get_digest)( 'sha1' )
 	print(sha1)
 
-	local pubkey = x509:get_public()
-	local verified = openssl.verify('I love lua', signed_data, pubkey, sha1)
+	-- is verified, public key from cert
+	local verified, pubkey
+	if is_opensslv3 then
+		pubkey = self_sign_cert:pubkey()
+		verified = pubkey:verify('I love lua', signed_data, sha1)
+	else
+		pubkey = self_sign_cert:get_public()
+		verified = openssl.verify('I love lua', signed_data, pubkey, sha1)
+	end
 	assert(verified)
 	print('sign and verify OK')
+
+	--[[
+		5. Exchange crypted message
+	]]
 
 	local m = "albert"
     local e = pubkey:encrypt(m)
@@ -253,21 +335,21 @@ if true then
 
 end
 
-if false then
+function testcases.test_sha1()
 
-	local sha1 = openssl.get_digest('sha1')
+	local sha1 = (is_opensslv3 and openssl.digest.get or openssl.get_digest)( 'sha1' )
 	local msg = string.rep('I love lua.',1000)
 
-	print( "digest: ", sha1:digest(msg) )
+	print( "digest: ", HexDumpString(sha1:digest(msg), "") )
 
 end
 
-if false then
+function testcases.test_aes()
 
 	--local evp_cipher = openssl.get_cipher('des3')
 	--local evp_cipher = openssl.get_cipher('des')
 	--local evp_cipher = openssl.get_cipher('bf')
-	local evp_cipher = openssl.get_cipher('aes-256-ecb')
+	local evp_cipher = (is_opensslv3 and openssl.cipher.get or openssl.get_cipher)( 'aes-256-ecb' )
 
 	m = 'abcdefghijk'
 	key = m
@@ -284,6 +366,17 @@ if false then
 		print( "Bad" )
 	end
 
+end
+
+for name, case in pairs( testcases ) do
+	if type(case) == "function" then
+		print("====== start testcase name:", name)
+		case()
+		check_error()
+		print("======  end  testcase name:", name)
+	else
+		print(name, "not a function")
+	end
 end
 
 print( "OpenSSL sample done" )

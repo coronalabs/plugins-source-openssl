@@ -1,0 +1,6 @@
+rootProject.name = "Sample OpenSSL 3"
+include("app", "plugin_openssl")
+
+if (settings.hasProperty('coronaExpansionFileName')) {
+	include("preloadedAssets")
+}

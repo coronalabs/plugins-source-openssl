@@ -37,7 +37,8 @@ then
 fi
 
 # Plugins
-OUTPUT_PLUGINS_DIR=$OUTPUT_DIR/plugins/2100.9999
+SOLAR2D_BUILD=$(head -c 100 "$path/SOLAR2DBUILD")
+OUTPUT_PLUGINS_DIR="$OUTPUT_DIR/plugins/$SOLAR2D_BUILD"
 OUTPUT_DIR_IOS=$OUTPUT_PLUGINS_DIR/iphone
 OUTPUT_DIR_IOS_SIM=$OUTPUT_PLUGINS_DIR/iphone-sim
 OUTPUT_DIR_TVOS=$OUTPUT_PLUGINS_DIR/tvos
@@ -70,60 +71,34 @@ mkdir -p "$OUTPUT_DIR_SAMPLES"
 echo "------------------------------------------------------------------------"
 echo "[ios]"
 cd "$path/ios"
-	./build.sh "$OUTPUT_DIR_IOS" $PLUGIN_NAME
+	./build.sh "$OUTPUT_DIR_IOS" "$OUTPUT_DIR_IOS_SIM" $PLUGIN_NAME
 
 	cp -v metadata.lua "$OUTPUT_DIR_IOS"
-
-	cp -rv "$OUTPUT_DIR_IOS/" "$OUTPUT_DIR_IOS_SIM"
-
-	# Remove i386 from ios build
-	find "$OUTPUT_DIR_IOS" -name \*.a | xargs -n 1 -I % lipo -remove i386 % -output %
-
-	# Remove x86_64 from ios build
-	find "$OUTPUT_DIR_IOS" -name \*.a | xargs -n 1 -I % lipo -remove x86_64 % -output %
-
-	# Remove armv7 from ios-sim build
-	find "$OUTPUT_DIR_IOS_SIM" -name \*.a | xargs -n 1 -I % lipo -remove armv7 % -output %
-
-	# Remove arm64 from ios-sim build
-	find "$OUTPUT_DIR_IOS_SIM" -name \*.a | xargs -n 1 -I % lipo -remove arm64 % -output %
+	cp -v metadata.lua "$OUTPUT_DIR_IOS_SIM"
 cd -
 
 echo "------------------------------------------------------------------------"
 echo "[tvos]"
 cd "$path/tvos"
-	./build.sh "$OUTPUT_DIR_TVOS" Corona_plugin_openssl
+	./build.sh "$OUTPUT_DIR_TVOS" "$OUTPUT_DIR_TVOS_SIM" Corona_plugin_opensslv3
 
 	cp -v metadata.lua "$OUTPUT_DIR_TVOS"
-
-	cp -rv "$OUTPUT_DIR_TVOS/" "$OUTPUT_DIR_TVOS_SIM"
-
-	# Remove i386 from TVos build
-	find "$OUTPUT_DIR_TVOS" -name \*.a | xargs -n 1 -I % lipo -remove i386 % -output %
-
-	# Remove x86_64 from TVos build
-	find "$OUTPUT_DIR_TVOS" -name \*.a | xargs -n 1 -I % lipo -remove x86_64 % -output %
-
-	# Remove armv7 from TVos-sim build
-	find "$OUTPUT_DIR_TVOS_SIM" -name \*.a | xargs -n 1 -I % lipo -remove armv7 % -output %
-
-	# Remove arm64 from TVos-sim build
-	find "$OUTPUT_DIR_TVOS_SIM" -name \*.a | xargs -n 1 -I % lipo -remove arm64 % -output %
+	cp -v metadata.lua "$OUTPUT_DIR_TVOS_SIM"
 cd -
 
 echo "------------------------------------------------------------------------"
 echo "[osx]"
 cd "$path/osx"
-	./build.sh "$OUTPUT_DIR_MAC" $PLUGIN_NAME
+	./build.sh "$OUTPUT_DIR_MAC" plugin_opensslv3
 cd -
 
 echo "------------------------------------------------------------------------"
 echo "[android]"
 cd "$path/android"
-	export OUTPUT_PLUGIN_DIR_ANDROID="$OUTPUT_DIR_ANDROID"
-	# The parameters of this build.sh are optional.
-	./build.sh
-	cp -v libs/armeabi-v7a/* "$OUTPUT_DIR_ANDROID"
+	./build.sh $OUTPUT_DIR_ANDROID
+	
+	mv "$OUTPUT_DIR_ANDROID/jni" "$OUTPUT_DIR_ANDROID/jniLibs"
+	cp -v "$OUTPUT_DIR_ANDROID/jniLibs/armeabi-v7a/"* "$OUTPUT_DIR_ANDROID"
 cd -
 
 if [ ! -f win32/Release/plugin_openssl.dll ]

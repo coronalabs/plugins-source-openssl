@@ -8,7 +8,6 @@
 --
 
 local json = require "json"
-local openssl = require( "plugin.openssl" )
 
 local g = display.newGroup()
  
@@ -43,16 +42,30 @@ Runtime._G.print = function(...)
 end
 
 ---------------------------------------------------------------------------
- 
-local openssl = require( "plugin.openssl" )
 
-local aes256cbc = openssl.get_cipher( "aes-256-cbc" )
+local is_opensslv3 = true
+local good, openssl = pcall( require, "plugin.opensslv3" )
+if good == false then
+	is_opensslv3 = false
+	print("WARNING: v3 not found, pcall require message is:", tostring(openssl))
+	print("Now require plugin.openssl")
+	openssl = require("plugin.openssl")
+end
 
 local lua_openssl_version, lua_version, openssl_version = openssl.version()
 print( "lua-openssl version: " .. lua_openssl_version, lua_version, openssl_version )
 
+local aes256cbc = nil
+
+if is_opensslv3 then
+	aes256cbc = openssl.cipher.get( "aes-256-cbc" )
+else
+	aes256cbc = openssl.get_cipher( "aes-256-cbc" )
+end
+
 print("openssl:" ,json.prettify(openssl))
 
+-- from Solar2D engine, not plugin.openssl
 local mime = require( "mime" )
  
 local testString = "Test String"

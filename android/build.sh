@@ -2,89 +2,22 @@
 
 # This option is used to exit the script as
 # soon as a command returns a non-zero value.
-set -o errexit
+set -ex
 
-path=`dirname $0`
+path=$(dirname "$0")
+path=$(realpath "$path")
+OUTPUT_DIR=${1:-libs}
+mkdir -p "$OUTPUT_DIR"
+OUTPUT_DIR=$(realpath "$OUTPUT_DIR")
 
-TARGET_NAME=openssl
-CONFIG=Release
-DEVICE_TYPE=all
-BUILD_TYPE=clean
-
-#
-# Checks exit value for error
-# 
-if [ -z "$ANDROID_NDK" ]
-then
-	echo "ERROR: ANDROID_NDK environment variable must be defined"
-	exit 0
-fi
-
-# Canonicalize paths
-pushd $path > /dev/null
-dir=`pwd`
-path=$dir
-popd > /dev/null
-
-######################
-# Build .so          #
-######################
-
-pushd $path/jni > /dev/null
-
-if [ "Release" == "$CONFIG" ]
-then
-	echo "Building RELEASE"
-	OPTIM_FLAGS="release"
-else
-	echo "Building DEBUG"
-	OPTIM_FLAGS="debug"
-fi
-
-if [ "clean" == "$BUILD_TYPE" ]
-then
-	echo "== Clean build =="
-	rm -rf $path/obj/ $path/libs/
-	FLAGS="-B"
-else
-	echo "== Incremental build =="
-	FLAGS=""
-fi
-
-CFLAGS=
-
-if [ "$OPTIM_FLAGS" = "debug" ]
-then
-	CFLAGS="${CFLAGS} -DRtt_DEBUG -g"
-	FLAGS="$FLAGS NDK_DEBUG=1"
-fi
-
-# Copy .so files
-unzip -u /Applications/CoronaEnterprise/Corona/android/lib/gradle/Corona.aar "*.so" -d "$path/corona-libs"
-
-if [ -z "$CFLAGS" ]
-then
-	echo "----------------------------------------------------------------------------"
-	echo "$ANDROID_NDK/ndk-build $FLAGS V=1 APP_OPTIM=$OPTIM_FLAGS"
-	echo "----------------------------------------------------------------------------"
-
-	$ANDROID_NDK/ndk-build $FLAGS V=1 APP_OPTIM=$OPTIM_FLAGS
-else
-	echo "----------------------------------------------------------------------------"
-	echo "$ANDROID_NDK/ndk-build $FLAGS V=1 MY_CFLAGS="$CFLAGS" APP_OPTIM=$OPTIM_FLAGS"
-	echo "----------------------------------------------------------------------------"
-
-	$ANDROID_NDK/ndk-build $FLAGS V=1 MY_CFLAGS="$CFLAGS" APP_OPTIM=$OPTIM_FLAGS
-fi
-
-
-popd > /dev/null
+"$path"/gradlew clean :plugin_openssl:assembleRelease
 
 ######################
 # Post-compile Steps #
 ######################
 
-find "$path/libs" \( -name liblua.so -or -name libcorona.so \)  -delete
+# Overwrite existing files without prompting is discourage.
+unzip "plugin_openssl/build/outputs/aar/plugin_openssl-release.aar" "jni/*" -d "$OUTPUT_DIR"
+cp metadata.lua "$OUTPUT_DIR"
 
 echo Done.
-echo $path/libs/armeabi-v7a/libplugin.openssl.so

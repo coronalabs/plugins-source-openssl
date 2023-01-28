@@ -3,9 +3,10 @@ local metadata =
 	plugin =
 	{
 		format = 'staticLibrary',
-		staticLibs = { 'plugin.openssl', },
+		staticLibs = { 'plugin.opensslv3', },
 		frameworks = {},
 		frameworksOptional = {},
+		-- usesSwift = true,
 	},
 }
 

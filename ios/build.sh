@@ -1,47 +1,50 @@
 #!/bin/bash
 
-# This option is used to exit the script as
-# soon as a command returns a non-zero value.
-set -o errexit
+set -ex
 
-path=`dirname $0`
+path=$(dirname "$0")
 
-OUTPUT_DIR=$1
-TARGET_NAME=plugin.openssl
+OUTPUT_DIR_IOS=$1
+OUTPUT_DIR_IOS_SIM=$2
+TARGET_NAME=$3
+echo ${TARGET_NAME:?"is empty"}
 OUTPUT_SUFFIX=a
 CONFIG=Release
 
-# 
+#
+# Checks exit value for error
+#
+checkError() {
+	if [ $? -ne 0 ]
+	then
+		echo "Exiting due to errors (above)"
+		exit -1
+	fi
+}
+
+#
 # Canonicalize relative paths to absolute paths
-# 
-pushd $path > /dev/null
-dir=`pwd`
+#
+pushd "$path" > /dev/null
+dir=$(pwd)
 path=$dir
 popd > /dev/null
 
-if [ -z "$OUTPUT_DIR" ]
-then
-    OUTPUT_DIR=.
-fi
+echo "OUTPUT_DIR_IOS: $(realpath ${OUTPUT_DIR_IOS:=./iphoneos})"
+echo "OUTPUT_DIR_IOS_SIM: $(realpath ${OUTPUT_DIR_IOS_SIM:=./iphonesimulator})"
 
-pushd $OUTPUT_DIR > /dev/null
-dir=`pwd`
-OUTPUT_DIR=$dir
-popd > /dev/null
+# Clean
+xcodebuild -project "$path/Plugin.xcodeproj" -configuration $CONFIG clean
+checkError
 
-echo "OUTPUT_DIR: $OUTPUT_DIR"
+# iOS
+xcodebuild -project "$path/Plugin.xcodeproj" -configuration $CONFIG -sdk iphoneos
+checkError
 
-# Clean.
-xcodebuild -project "$path/Plugin.xcodeproj" -target $TARGET_NAME -configuration $CONFIG clean
+# iOS-sim
+xcodebuild -project "$path/Plugin.xcodeproj" -configuration $CONFIG -sdk iphonesimulator
+checkError
 
-# Build iOS.
-xcodebuild -project "$path/Plugin.xcodeproj" -target $TARGET_NAME -configuration $CONFIG -sdk iphoneos
-
-# Build iOS-sim.
-xcodebuild -project "$path/Plugin.xcodeproj" -target $TARGET_NAME -configuration $CONFIG -sdk iphonesimulator
-
-# Create a universal binary.
-lipo -create "$path"/build/$CONFIG-iphoneos/lib$TARGET_NAME.$OUTPUT_SUFFIX "$path"/build/$CONFIG-iphonesimulator/lib$TARGET_NAME.$OUTPUT_SUFFIX -output "$OUTPUT_DIR"/lib$TARGET_NAME.$OUTPUT_SUFFIX
-
-echo Done.
-echo "$OUTPUT_DIR"/lib$TARGET_NAME.$OUTPUT_SUFFIX
+# copy binary to dst
+cp -v "$path"/build/$CONFIG-iphoneos/lib$TARGET_NAME.$OUTPUT_SUFFIX "$OUTPUT_DIR_IOS"/lib$TARGET_NAME.$OUTPUT_SUFFIX
+cp -v "$path"/build/$CONFIG-iphonesimulator/lib$TARGET_NAME.$OUTPUT_SUFFIX "$OUTPUT_DIR_IOS_SIM"/lib$TARGET_NAME.$OUTPUT_SUFFIX

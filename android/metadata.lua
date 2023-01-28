@@ -3,7 +3,7 @@ local metadata =
 	plugin =
 	{
 		format = 'sharedLibrary',
-		staticLibs = { 'plugin.openssl', },
+		staticLibs = { 'plugin.opensslv3', },
 		frameworks = {},
 		frameworksOptional = {},
 	},

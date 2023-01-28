@@ -6,7 +6,7 @@ set -o errexit
 
 path=`dirname $0`
 
-PLUGIN_NAME=libplugin.openssl
+PLUGIN_NAME=plugin.opensslv3
 
 # 
 # Canonicalize relative paths to absolute paths

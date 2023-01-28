@@ -4,7 +4,7 @@ local metadata =
 	{
 		format = 'framework',
 		staticLibs = {},
-		frameworks = { "Corona_plugin_openssl" },
+		frameworks = { "Corona_plugin_opensslv3" },
 		frameworksOptional = {},
 	},
 }

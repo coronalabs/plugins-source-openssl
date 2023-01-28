@@ -1,0 +1,80 @@
+xcuserdata/
+
+# Backup files left behind by Emacs
+*~
+
+# Lock files used by Emacs
+# Notice that the "#" char is escaped
+.\#*
+
+# Temp files used by vim
+.*.swp
+tags
+
+# XCode
+*.xcworkspace*
+
+# Hidden files used by the Finder in MacOS
+.DS_Store
+.Trashes
+.com.apple.timemachine.supported
+.fseventsd/*
+.TemporaryItems/*
+Desktop DB
+Desktop DF
+
+*/build/*
+*.pbxuser
+*.perspective*
+*.mode1
+*.mode1v3
+*.orig
+*.class
+*.apk
+*.ap_
+*.obj
+*.bak
+*.dex
+*.so
+*.ncb
+*.sdf
+*.opensdf
+*.suo
+*.idb
+*.pdb
+*.ilk
+*.lu
+*._*
+
+# Build files
+build/*
+android/bin/*
+android/libs/*
+android/libs/armeabi/*
+android/gen/*
+android/assets/*
+android/obj/*
+
+mac/plugin_openssl.dylib
+
+win32/Debug
+win32/Release
+
+plugin-openssl-android.tgz
+plugin-openssl-iphone-sim.tgz
+plugin-openssl-iphone.tgz
+plugin-openssl-osx.tgz
+plugin-openssl-tvos-sim.tgz
+plugin-openssl-tvos.tgz
+plugin-openssl-win32.zip
+
+tests/cert.pem
+tests/key.pem
+tvos/build_tvos_openssl
+ios/build_ios_openssl
+osx/build_macos_openssl
+
+win32/.vs
+# keep for publish
+!win32/Release/plugin_*.dll
+win32/build_win32_openssl

@@ -3,13 +3,15 @@ settings =
 	orientation =
 	{
 		default = "portrait",
-		supported = { "portrait" }
+		supported = { "portrait", "landscape" }
 	},
 
 	iphone =
 	{
+		xcassets = "Images.xcassets",
 		plist =
 		{
+			UILaunchStoryboardName = "LaunchScreen",
 			CFBundleIconFile = "Icon.png",
 			CFBundleIconFiles = {
 				"Icon.png", 
