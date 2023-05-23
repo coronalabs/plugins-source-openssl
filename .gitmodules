@@ -1,6 +1,6 @@
 [submodule "sdk-lua-openssl"]
 	path = sdk-lua-openssl
-	url = ../sdk-lua-openssl
+	url = ../lua-openssl
 [submodule "sdk-luasocket"]
 	path = sdk-luasocket
 	url = ../submodule-luasocket
