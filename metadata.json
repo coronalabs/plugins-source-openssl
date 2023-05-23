@@ -1,6 +1,6 @@
 {
     "contact": "support@coronalabs.com",
     "url": "https://coronalabs.com",
-    "pluginName": "plugin.openssl",
+    "pluginName": "plugin.opensslv3",
     "publisherId": "com.coronalabs"
 }

@@ -101,7 +101,7 @@ cd "$path/android"
 	cp -v "$OUTPUT_DIR_ANDROID/jniLibs/armeabi-v7a/"* "$OUTPUT_DIR_ANDROID"
 cd -
 
-if [ ! -f win32/Release/plugin_openssl.dll ]
+if [ ! -f win32/Release/plugin_opensslv3.dll ]
 then
 	echo "Build plugin for win32 before packaging"
 	exit 1
@@ -110,8 +110,7 @@ fi
 echo "------------------------------------------------------------------------"
 echo "[win32]"
 cd "$path"
-	cp -v sdk-openssl/win32/bin/*.dll "$OUTPUT_DIR_WIN32"
-	cp -v win32/Release/plugin_openssl.dll "$OUTPUT_DIR_WIN32"
+	cp -v win32/Release/plugin_opensslv3.dll "$OUTPUT_DIR_WIN32"
 cd -
 
 if [ -d "$path/docs" ]
